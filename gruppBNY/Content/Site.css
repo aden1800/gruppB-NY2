@@ -28,8 +28,6 @@ textarea {
     max-width: 100%;
     height: auto;
     width: auto;
-
-
 }
 .addresumeimage {
     text-align: center;
@@ -37,6 +35,8 @@ textarea {
     height: auto;
     width: auto;
     padding-top: 15px;
+    padding-left: 10px;
+    
 }
 .freelancerimage {
     text-align: center;
@@ -44,23 +44,13 @@ textarea {
     height: auto;
     width: auto;
     padding-top: 15px;
+    padding-right: 10px;
 }
 
-.detailsprofile{
-    padding-top: 15px;
-    width: 200px;
-    height: 225px;
+.aboutus {
+    margin: auto;
+    float: none;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
-.dl-horizontal dd {
-    padding: 3px;
-
-}
-.dl-horizontal dt {
-    padding: 3px;
-}
-#freelancerH{
-    text-align: center; 
-    padding: 3px; 
-
-}
-
