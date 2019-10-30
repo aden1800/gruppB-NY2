@@ -188,6 +188,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\addresume.png" />
     <Content Include="Content\Images\freelancersearch.png" />
+    <Content Include="Content\Images\how_to_write_a_resume_banner.png" />
     <Content Include="Content\Images\ImageHeader.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
