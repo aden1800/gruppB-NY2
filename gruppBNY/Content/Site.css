@@ -23,24 +23,6 @@ textarea {
     max-width: 280px;
 }
 
-.articleaboutus {
-    float: left;
-    width: 50%;
-    height: auto;
-    padding: 4%;
-}
-.articleimage {
-    width: 100%;
-
-}
-
-.asideaboutus {
-    float: right;
-    width: 50%;
-    height: auto;
-    padding: 3%;
-}	
-
 .headerimage {
     text-align: center;
     max-width: 100%;
@@ -72,4 +54,21 @@ textarea {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+.detailsprofile {
+    padding-top: 15px;
+    width: 200px;
+    height: 225px;
+}
 
+.dl-horizontal dd {
+    padding: 3px;
+}
+
+.dl-horizontal dt {
+    padding: 3px;
+}
+
+#freelancerH {
+    text-align: center;
+    padding: 3px;
+}
