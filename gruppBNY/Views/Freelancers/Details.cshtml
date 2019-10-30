@@ -1,0 +1,114 @@
+﻿@model gruppBNY.Models.Freelancer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Freelancer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Firstname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Firstname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lastname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lastname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Feelancer_Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Feelancer_Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phonenumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phonenumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Birthday)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Birthday)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BirthCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BirthCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nationality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nationality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Drivers_license)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Drivers_license)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Profile_text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profile_text)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.freelancer_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="080d3db835054e6e802ffec09f8dee52" Name="Diagram1">
+        <EntityTypeShape EntityType="gruppBModel.category" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="gruppBModel.competence" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="gruppBModel.core_abilities" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="gruppBModel.customer" Width="1.5" PointX="5.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="gruppBModel.education" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="gruppBModel.Freelancer" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="gruppBModel.languages" Width="1.5" PointX="7.5" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="gruppBModel.work_history" Width="1.5" PointX="7.5" PointY="4.625" IsExpanded="true" />
+        <AssociationConnector Association="gruppBModel.competence_category" ManuallyRouted="false" />
+        <AssociationConnector Association="gruppBModel.freelancer_competence" ManuallyRouted="false" />
+        <AssociationConnector Association="gruppBModel.freelancer_coreabilities" ManuallyRouted="false" />
+        <AssociationConnector Association="gruppBModel.Freelancer_Education" ManuallyRouted="false" />
+        <AssociationConnector Association="gruppBModel.freelancer_languages" ManuallyRouted="false" />
+        <AssociationConnector Association="gruppBModel.freelancer_workhistory" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

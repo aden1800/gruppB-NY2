@@ -1,0 +1,58 @@
+﻿@model IEnumerable<gruppBNY.Models.work_history>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.company)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.work_position)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.start_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.end_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.work_duties)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.company)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.work_position)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.start_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.end_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.work_duties)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.work_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.work_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.work_Id })
+        </td>
+    </tr>
+}
+
+</table>
