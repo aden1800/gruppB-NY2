@@ -22,3 +22,26 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.headerimage {
+    text-align: center;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+
+
+}
+.addresumeimage {
+    text-align: center;
+    max-width: 75%;
+    height: auto;
+    width: auto;
+    padding-top: 15px;
+}
+.freelancerimage {
+    text-align: center;
+    max-width: 75%;
+    height: auto;
+    width: auto;
+    padding-top: 15px;
+}
