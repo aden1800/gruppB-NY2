@@ -54,3 +54,21 @@ textarea {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+.detailsprofile {
+    padding-top: 15px;
+    width: 200px;
+    height: 225px;
+}
+
+.dl-horizontal dd {
+    padding: 3px;
+}
+
+.dl-horizontal dt {
+    padding: 3px;
+}
+
+#freelancerH {
+    text-align: center;
+    padding: 3px;
+}
