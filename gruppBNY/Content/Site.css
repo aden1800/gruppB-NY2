@@ -39,14 +39,18 @@ textarea {
     width: 50%;
     height: auto;
     padding: 3%;
-}	
-
+}
+.headerimagediv {
+    margin: 0;
+    padding: 0;
+}
 
 .headerimage {
+    
     text-align: center;
-    max-width: 100%;
-    height: auto;
-    width: auto;
+    max-width: 150%;
+    height: 100%;
+    width: 150%
 }
 .addresumeimage {
     text-align: center;
@@ -90,4 +94,11 @@ textarea {
 #freelancerH {
     text-align: center;
     padding: 3px;
+}
+
+.headerimagediv {
+    display: block;
+    width: 348px;
+    overflow: hidden;
+    white-space: nowrap;
 }
