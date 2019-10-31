@@ -1,55 +1,75 @@
 ﻿@{
     ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div>
     <img class="headerimage" src="~/Content/Images/ImageHeader.jpg" />
 </div>
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<h2>Contact</h2>
+<h3>Contact us</h3>
 
 
-
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
-
-<h1 class="h1contact">Contact Form</h1>
 <form>
     <label>
         Firstname
+        <br />
         <input type="text" class="firstname" />
     </label>
+    <br />
     <label>
         Lastname
+        <br />
         <input type="text" class="lastname" />
     </label>
+    <br />
     <label>
         E-mail
+        <br />
         <input type="email" class="email" />
     </label>
+    <br />
     <label>
         Phonenumber
+        <br />
         <input type="number" class="phonenumber" />
     </label>
+    <br />  
     <label>
         Message
+        <br />
         <textarea class="message"></textarea>
     </label>
+    <br />
     <div class="status">
 
     </div>
+    <br />
     <button type="submit" class="submit">
         Send
     </button>
 
+    <aside class="contactAside">
 
+        <h1>Contact Information</h1>
+
+        <img src="~/Content/Images/placeholder.png" style="width:50px;height:50px;" />
+        <address>
+            One Microsoft Way<br />
+            Redmond, WA 98052-6399<br />
+            <abbr title="Phone">P:</abbr>
+            425.555.0100
+        </address>
+        
+        <img src="~/Content/Images/envelope.png" style="width:50px;height:50px;"/> 
+        <address>
+            <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+            <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+        </address>
+
+        <img src="~/Content/Images/phone-call.png" style="width:50px;height:50px;"/>
+        <p>
+            <strong>Phonenumber:</strong> +1 123 456 78
+        </p>
+    </aside>
 
 </form>
