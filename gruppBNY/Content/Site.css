@@ -40,17 +40,13 @@ textarea {
     height: auto;
     padding: 3%;
 }
-.headerimagediv {
-    margin: 0;
-    padding: 0;
-}
 
 .headerimage {
     
     text-align: center;
-    max-width: 150%;
-    height: 100%;
-    width: 150%
+    max-width: 100%;
+    height: auto;
+    width: auto;
 }
 .addresumeimage {
     text-align: center;
