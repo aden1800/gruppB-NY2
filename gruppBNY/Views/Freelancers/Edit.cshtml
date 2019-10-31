@@ -123,9 +123,9 @@
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+    <div>
+        @Html.ActionLink("Back to Profile", "Details", new { id = Model.freelancer_Id })
+    </div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
