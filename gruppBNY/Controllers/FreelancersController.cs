@@ -17,6 +17,23 @@ namespace gruppBNY.Controllers
         // GET: Freelancers
         public ActionResult Index()
         {
+            //gruppBNY.Models.competence testsak = new gruppBNY.Models.competence();
+            //gruppBNY.Models.Freelancer testsak2 = new gruppBNY.Models.Freelancer();
+            //var test = "";
+            //foreach (var item in db.Freelancer)
+            //{
+            //    foreach (var item2 in item.competence)
+            //    {
+            //        test += ", " + Convert.ToString(item2);
+            //        testsak.competences = test;
+            //        //testsak2.freelancer_Id = item.freelancer_Id;
+            //        item2.competences = testsak.competences;
+            //        db.Freelancer = item2;
+            //    }
+                
+                
+
+            //}
             return View(db.Freelancer.ToList());
         }
 

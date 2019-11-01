@@ -101,8 +101,11 @@
                 @Html.DisplayFor(modelItem => item.Drivers_license)
             </td>
             <td>
-                Programming
-                @*@Html.DisplayFor(modelItem => item.Profile_text)*@
+                @foreach (var item2 in item.competence)
+                {
+                    @Html.DisplayFor(modelItem => item2.competences)
+                }
+
             </td>
             <td>
                     @Html.ActionLink("Details", "Details", new { id=item.freelancer_Id })
