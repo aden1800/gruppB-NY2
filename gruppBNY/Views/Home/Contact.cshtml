@@ -2,14 +2,22 @@
     ViewBag.Title = "Contact";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div>
     <img class="headerimage" src="~/Content/Images/ImageHeader.jpg" />
+<div class="contactTop">
+    <h2>Contact</h2>
 </div>
-<h2>Contact</h2>
-<h3>Contact us</h3>
 
+<aside class="MapImage">
+    <br />
+    <br />
+    <br />
+    <img src="~/Content/Images/ContacMap.jpg" />
+</aside>
 
-<form>
+<form class="contact">
+    <br />
+    <br />
+    <h3>Contact us</h3>
     <label>
         Firstname
         <br />
@@ -43,33 +51,35 @@
     <div class="status">
 
     </div>
-    <br />
     <button type="submit" class="submit">
         Send
     </button>
-
-    <aside class="contactAside">
-
-        <h1>Contact Information</h1>
-
-        <img src="~/Content/Images/placeholder.png" style="width:50px;height:50px;" />
-        <address>
-            One Microsoft Way<br />
-            Redmond, WA 98052-6399<br />
-            <abbr title="Phone">P:</abbr>
-            425.555.0100
-        </address>
-        
-        <img src="~/Content/Images/envelope.png" style="width:50px;height:50px;"/> 
-        <address>
-            <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-            <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-        </address>
-
-        <img src="~/Content/Images/phone-call.png" style="width:50px;height:50px;"/>
-        <p>
-            <strong>Phonenumber:</strong> +1 123 456 78
-        </p>
-    </aside>
+    <br />
+    <br />
 
 </form>
+
+    <aside class="contactAside">
+        <div>
+            <h1>Contact Information</h1>
+
+            <img src="~/Content/Images/placeholder.png" />
+            <address>
+                One Microsoft Way<br />
+                Redmond, WA 98052-6399<br />
+                <abbr title="Phone">P:</abbr>
+                425.555.0100
+            </address>
+        
+            <img src="~/Content/Images/envelope.png"/> 
+            <address>
+                <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+                <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+            </address>
+
+            <img src="~/Content/Images/phone-call.png"/>
+            <p id="phonenumber">
+                <strong>Phonenumber:</strong> +1 123 456 78
+            </p>
+        </div>
+    </aside>
