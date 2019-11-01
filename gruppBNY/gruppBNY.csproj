@@ -136,6 +136,8 @@
     <Compile Include="Controllers\FreelancersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\languagesController.cs" />
+    <Compile Include="Controllers\LoginCustomerController.cs" />
+    <Compile Include="Controllers\LoginFreeController.cs" />
     <Compile Include="Controllers\work_historyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -282,9 +284,12 @@
     <Content Include="Views\work_history\Details.cshtml" />
     <Content Include="Views\work_history\Edit.cshtml" />
     <Content Include="Views\work_history\Index.cshtml" />
+    <Content Include="Views\LoginFree\Index.cshtml" />
+    <Content Include="Views\LoginCustomer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Freelancer\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
