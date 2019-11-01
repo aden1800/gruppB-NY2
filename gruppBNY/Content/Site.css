@@ -106,3 +106,8 @@ textarea {
     overflow: hidden;
     white-space: nowrap;
 }
+
+.LoginCustomer {
+    text-align: center;
+    padding: 3px;
+}

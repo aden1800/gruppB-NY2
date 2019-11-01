@@ -4,15 +4,29 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<form action="~/Customers/Details/1">
-    First name:<br>
+<div>
+    <img class="headerimage" src="~/Content/Images/ImageHeader.jpg" />
+</div>
+
+<div style="padding-left:8px;padding-right:8px;">
+    <h1 id="freelancerH">Hello Customer</h1>
+</div>
+
+<form class="LoginCustomer" action="~/Customers/Details/1">
+    Username:<br>
     <input type="text" name="Username" value="Username"><br>
-    Last name:<br>
+    Password:<br>
     <input type="password" name="Password" value="*****"><br><br>
-    <input type="submit" value="Submit">
+    <input type="submit" value="Login">
 
     <a href="~/Customers/Create">
         <p>Create account</p>
+    </a>
+
+    Do you want to login as a Freelancer?
+    <br />
+    <a href="~/LoginFree">
+        Click Here
     </a>
 </form>
 
