@@ -5,10 +5,20 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+
+
+<div>
+    <img class="headerimage" src="~/Content/Images/ImageHeader.jpg" />
+</div>
+
+<div style="padding-left:8px;padding-right:8px;">
+    <h1 id="freelancerH">Freelancer</h1>
+    <p id="freelancerText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @*@Html.ActionLink("Create New", "Create")*@
 </p>
 <table class="table">
     <tr>
@@ -18,12 +28,12 @@
         <th>
             @Html.DisplayNameFor(model => model.Lastname)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Username)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Feelancer_Password)
-        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Feelancer_Password)
+            </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Address)
         </th>
@@ -37,64 +47,68 @@
             @Html.DisplayNameFor(model => model.Birthday)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.BirthCity)
+            Birth city
+            @*@Html.DisplayNameFor(model => model.BirthCity)*@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Nationality)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Drivers_license)
+            Drivers licens
+            @*@Html.DisplayNameFor(model => model.Drivers_license)*@
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Profile_text)
+            Competence
+            @*@Html.DisplayNameFor(model => model.Profile_text)*@
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Firstname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lastname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Username)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Feelancer_Password)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Phonenumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Birthday)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BirthCity)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nationality)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Drivers_license)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Profile_text)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.freelancer_Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.freelancer_Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.freelancer_Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Firstname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lastname)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Feelancer_Password)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phonenumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Birthday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nationality)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Drivers_license)
+            </td>
+            <td>
+                Programming
+                @*@Html.DisplayFor(modelItem => item.Profile_text)*@
+            </td>
+            <td>
+                    @Html.ActionLink("Details", "Details", new { id=item.freelancer_Id })
+                
+            </td>
+        </tr>
+    }
 
 </table>

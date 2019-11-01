@@ -4,10 +4,11 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<img class="detailsprofile" src="~/Content/Images/addresume.png" />
+<h2 style="padding-left:8px;">@Html.DisplayFor(model => model.Firstname)  @Html.DisplayFor(model => model.Lastname) </h2>
 
 <div>
-    <h4>Freelancer</h4>
+    
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -24,22 +25,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.Lastname)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Username)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Username)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Feelancer_Password)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Feelancer_Password)
         </dd>
 
         <dt>
@@ -91,24 +76,26 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Drivers_license)
+            Driver Licens
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Drivers_license)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.Profile_text)
+           Profile text
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Profile_text)
         </dd>
 
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.freelancer_Id }) |
+<p style="padding-left:8px;">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.freelancer_Id }) 
+    <br />
     @Html.ActionLink("Back to List", "Index")
 </p>
