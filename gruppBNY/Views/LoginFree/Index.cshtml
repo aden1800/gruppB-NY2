@@ -3,9 +3,11 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div>
+    <img class="headerimage" src="~/Content/Images/ImageHeader.jpg" />
+</div>
 
-
-<form action="~/Freelancers/Details/1">
+<form class="LoginFreelancer" action="~/Freelancers/Details/1">
     First name:<br>
     <input type="text" name="Username" value="Username"><br>
     Last name:<br>
@@ -14,6 +16,12 @@
 
     <a href="~/Freelancers/Create">
         <p>Create account</p>
+    </a>
+
+    Do you want to login as a Customer?
+    <br />
+    <a href="~/LoginCustomer">
+        Click Here
     </a>
 </form>
 
