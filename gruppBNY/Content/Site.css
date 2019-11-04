@@ -147,3 +147,43 @@ textarea {
 .contactAside address, #phonenumber{
     padding-left: 70px;
 }
+
+footer {
+    background-color: #222222;
+    width: 100%;
+    overflow: hidden;
+    opacity: 0.90;
+}
+
+ul.social li {
+    display: inline;
+    
+}
+
+.socialtext {
+    padding-left: 40px;
+}
+
+.sectionfooter1 {
+    width: 29%;
+    float: left;
+    margin: 2% 2%;
+    text-align: center;
+    color: #ffffff;
+}
+
+.sectionfooter2 {
+    width: 29%;
+    float: left;
+    margin: 2% 2%;
+    text-align: center;
+    color: #ffffff;
+}
+
+.sectionfooter3 {
+    width: 29%;
+    float: left;
+    margin: 2% 2%;
+    text-align: center;
+    color: #ffffff;
+}
