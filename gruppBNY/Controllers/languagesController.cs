@@ -12,7 +12,7 @@ namespace gruppBNY.Controllers
 {
     public class languagesController : Controller
     {
-        private gruppBEntities db = new gruppBEntities();
+        private gruppBEntities1 db = new gruppBEntities1();
 
         // GET: languages
         public ActionResult Index()

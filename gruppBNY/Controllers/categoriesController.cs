@@ -12,7 +12,7 @@ namespace gruppBNY.Controllers
 {
     public class categoriesController : Controller
     {
-        private gruppBEntities db = new gruppBEntities();
+        private gruppBEntities1 db = new gruppBEntities1();
 
         // GET: categories
         public ActionResult Index()

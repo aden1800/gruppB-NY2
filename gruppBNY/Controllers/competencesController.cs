@@ -13,7 +13,7 @@ namespace gruppBNY.Controllers
 {
     public class competencesController : Controller
     {
-        private gruppBEntities db = new gruppBEntities();
+        private gruppBEntities1 db = new gruppBEntities1();
 
         // GET: competences
         public ActionResult Index()
@@ -82,7 +82,7 @@ namespace gruppBNY.Controllers
                 Text = o.type_of_competence,
                 Value = o.category_Id.ToString()
             });
-            ViewBag.freelancer_Id = new SelectList(db.Freelancer, "freelancer_Id", "Firstname", competenceVM.freelancer.freelancer_Id);
+            ViewBag.freelancer_Id = new SelectList(db.Freelancer, "freelancer_Id", "Firstname", competenceVM.competence.freelancer_id);
             
          
             return View(competenceVM);

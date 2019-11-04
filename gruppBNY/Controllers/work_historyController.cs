@@ -12,7 +12,7 @@ namespace gruppBNY.Controllers
 {
     public class work_historyController : Controller
     {
-        private gruppBEntities db = new gruppBEntities();
+        private gruppBEntities1 db = new gruppBEntities1();
 
         // GET: work_history
         public ActionResult Index()

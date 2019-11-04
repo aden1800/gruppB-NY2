@@ -12,7 +12,7 @@ namespace gruppBNY.Controllers
 {
     public class core_abilitiesController : Controller
     {
-        private gruppBEntities db = new gruppBEntities();
+        private gruppBEntities1 db = new gruppBEntities1();
 
         // GET: core_abilities
         public ActionResult Index()

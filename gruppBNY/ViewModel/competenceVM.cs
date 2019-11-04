@@ -11,7 +11,6 @@ namespace gruppBNY.ViewModel
     {
         public competence competence { get; set; }
         public IEnumerable<SelectListItem> Allcategories { get; set; }
-        public Freelancer freelancer { get; set; }
         private List<int> listofCategories;
         public List<int> ListOfCategories
         {

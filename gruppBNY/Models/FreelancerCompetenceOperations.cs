@@ -10,10 +10,10 @@ namespace gruppBNY.Models
     {
         public List<freelancer_competenceVM> freelancersList()
         {
-            using (gruppBEntities vmdb = new gruppBEntities())
+            using (gruppBEntities1 vmdb = new gruppBEntities1())
             {
                 List<freelancer_competenceVM> freelancerCompetencesList = new List<freelancer_competenceVM>();
-                var freelancerObj = new gruppBEntities();
+                var freelancerObj = new gruppBEntities1();
                 
                 
                 //var freelancerlist = (from free in vmdb.freelancer                                    
