@@ -152,14 +152,21 @@ textarea {
     float: right;
 }
 
-table, th, td {
+.Competence_table {
     border: 1px solid black;
-}
-th, td {
     padding: 15px;
-}
-table#t01 {
     background-color: #ededed;
+    
 }
+
+    .Competence_table th {
+        border: 1px solid black;
+        padding: 15px;
+    }
+
+    .Competence_table td {
+        border: 1px solid black;
+        padding: 15px;
+    }
 
 
