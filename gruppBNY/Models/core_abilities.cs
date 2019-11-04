@@ -14,16 +14,10 @@ namespace gruppBNY.Models
     
     public partial class core_abilities
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public core_abilities()
-        {
-            this.Freelancer = new HashSet<Freelancer>();
-        }
-    
         public int core_abilities_Id { get; set; }
         public string ability { get; set; }
+        public Nullable<int> freelancer_id { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Freelancer> Freelancer { get; set; }
+        public virtual Freelancer Freelancer { get; set; }
     }
 }

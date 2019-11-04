@@ -12,22 +12,21 @@ namespace gruppBNY.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class competence 
+    public partial class competence
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public competence()
         {
             this.category = new HashSet<category>();
-            this.Freelancer = new HashSet<Freelancer>();
         }
     
         public int competence_Id { get; set; }
         public string competences { get; set; }
         public int scale { get; set; }
+        public Nullable<int> freelancer_id { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<category> category { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Freelancer> Freelancer { get; set; }
+        public virtual Freelancer Freelancer { get; set; }
     }
 }

@@ -4,21 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="080d3db835054e6e802ffec09f8dee52" Name="Diagram1">
-        <EntityTypeShape EntityType="gruppBModel.category" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="gruppBModel.competence" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="gruppBModel.core_abilities" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="gruppBModel.customer" Width="1.5" PointX="5.75" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="gruppBModel.education" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="gruppBModel.Freelancer" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="gruppBModel.languages" Width="1.5" PointX="7.5" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="gruppBModel.work_history" Width="1.5" PointX="7.5" PointY="4.625" IsExpanded="true" />
-        <AssociationConnector Association="gruppBModel.competence_category" ManuallyRouted="false" />
-        <AssociationConnector Association="gruppBModel.freelancer_competence" ManuallyRouted="false" />
-        <AssociationConnector Association="gruppBModel.freelancer_coreabilities" ManuallyRouted="false" />
-        <AssociationConnector Association="gruppBModel.Freelancer_Education" ManuallyRouted="false" />
-        <AssociationConnector Association="gruppBModel.freelancer_languages" ManuallyRouted="false" />
-        <AssociationConnector Association="gruppBModel.freelancer_workhistory" ManuallyRouted="false" />
+      <Diagram DiagramId="673ba04518f24ab7b1d1428998de02e9" Name="Diagram1">
+        <EntityTypeShape EntityType="gruppBModel.category" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="gruppBModel.competence" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="gruppBModel.core_abilities" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="gruppBModel.customer" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="gruppBModel.education" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="gruppBModel.Freelancer" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="gruppBModel.languages" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="gruppBModel.work_history" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <AssociationConnector Association="gruppBModel.FK__category__compet__778AC167" ManuallyRouted="false" />
+        <AssociationConnector Association="gruppBModel.FK__competenc__freel__76969D2E" ManuallyRouted="false" />
+        <AssociationConnector Association="gruppBModel.FK__core_abil__freel__75A278F5" ManuallyRouted="false" />
+        <AssociationConnector Association="gruppBModel.FK__education__freel__74AE54BC" ManuallyRouted="false" />
+        <AssociationConnector Association="gruppBModel.FK__languages__freel__73BA3083" ManuallyRouted="false" />
+        <AssociationConnector Association="gruppBModel.FK__work_hist__freel__72C60C4A" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

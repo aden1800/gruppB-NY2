@@ -13,10 +13,10 @@ namespace gruppBNY.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class gruppBEntities : DbContext
+    public partial class gruppBEntities1 : DbContext
     {
-        public gruppBEntities()
-            : base("name=gruppBEntities")
+        public gruppBEntities1()
+            : base("name=gruppBEntities1")
         {
         }
     
@@ -33,7 +33,5 @@ namespace gruppBNY.Models
         public virtual DbSet<Freelancer> Freelancer { get; set; }
         public virtual DbSet<languages> languages { get; set; }
         public virtual DbSet<work_history> work_history { get; set; }
-
-        //public System.Data.Entity.DbSet<gruppBNY.ViewModels.freelancer_competence> freelancer_competence { get; set; }
     }
 }
