@@ -4,8 +4,26 @@
     ViewBag.Title = "Details";
 }
 
+<header class="DetailsHeader">
+    <div style="background-color:#323d47">
+       
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="#Top">Go to top</a></li>
+            <li><a href="#Education">Education</a>
+            <li><a href="#Work-History">Work History</a>
+            <li><a href="#Core_abilities">Core Abilities</a>
+            <li><a href="#competence">Competence</a>
+            <li><a href="#Languages">Languages</a>
+        </ul>
+    </nav>
+</header>
+
+
 <img class="detailsprofile" src="~/Content/Images/addresume.png" />
-<h2 style="padding-left:8px;">@Html.DisplayFor(model => model.Firstname)  @Html.DisplayFor(model => model.Lastname) </h2>
+<h2 name="Top" style="padding-left:8px;">@Html.DisplayFor(model => model.Firstname)  @Html.DisplayFor(model => model.Lastname) </h2>
 
 <div>
 
@@ -67,6 +85,7 @@
             @Html.DisplayFor(model => model.BirthCity)
         </dd>
 
+        <a name="Education"></a>
         <dt>
             @Html.DisplayNameFor(model => model.Nationality)
         </dt>
@@ -74,7 +93,6 @@
         <dd>
             @Html.DisplayFor(model => model.Nationality)
         </dd>
-
         <dt>
             Driver Licens
         </dt>
@@ -92,9 +110,11 @@
 
 
     </dl>
-    <h2 style="padding-left:8px;">Education</h2>
+    </div>
 
-    <dl class="dl-horizontal">
+    <h2 style="padding-left:8px;">Education</h2>
+    <div>
+    <dl class="dl-horizontal" >
         <dt>
             School name
         </dt>
@@ -105,6 +125,7 @@
         <dt>
             Date of exam
         </dt>
+        <a name="Work-History"></a>
         <dd>
             @*Här ska "Education_date" från "Education" in*@
             2017-06-10
@@ -124,8 +145,10 @@
             Master
         </dd>
     </dl>
-
+    </div>
+    
     <h2 style="padding-left:8px;">Work History</h2>
+<div>
     <dl class="dl-horizontal">
         <dt>
             Company
@@ -163,8 +186,10 @@
             Scrum master, leading projects
         </dd>
     </dl>
-
+</div>
+    <a name="Core_abilities"></a>
     <h2 style="padding-left:8px;">Core abilities</h2>
+<div>
     <dl class="dl-horizontal">
         <dt>
             Abilities
@@ -174,8 +199,10 @@
             Team work, problem solving
         </dd>
     </dl>
-
+</div>
+    <a name="competence"></a>
     <h2 style="padding-left:8px;">Competence</h2>
+<div>
     <table class="Competence_table" style="margin-left:100px;">
         <tr>
             <th>
@@ -194,8 +221,10 @@
             </td>
         </tr>
     </table>
-
+</div>
+    <a name="Languages"></a>
     <h2 style="padding-left:8px;">Language</h2>
+<div>
     <dl class="dl-horizontal">
         <dt>
             Languages

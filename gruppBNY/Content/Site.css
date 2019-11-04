@@ -82,6 +82,7 @@ textarea {
     margin-bottom: 10px;
 }
 .detailsprofile {
+    margin-top: 40px;
     padding-top: 15px;
     width: 200px;
     height: 225px;
@@ -207,4 +208,41 @@ ul.social li {
     text-align: center;
     color: #ffffff;
 }
+
+.DetailsHeader {
+    background: #62778c;
+    width: 100%;
+    height: 90px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+    .DetailsHeader nav {
+        text-align: center;
+        padding: 35px 20px 0px 0;
+        margin-top: 20px;
+        bottom: 0;
+    }
+
+    .DetailsHeader ul {
+        list-style: none;
+    }
+
+    .DetailsHeader nav ul li {
+        display: inline-block;
+        padding: 10px;
+    }
+
+    .DetailsHeader a {
+        color: #FFF;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        .DetailsHeader a:hover {
+            color: #FFF;
+            text-decoration: underline;
+        }
 
