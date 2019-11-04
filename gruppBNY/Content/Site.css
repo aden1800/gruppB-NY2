@@ -147,3 +147,19 @@ textarea {
 .contactAside address, #phonenumber{
     padding-left: 70px;
 }
+
+.education{
+    float: right;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+th, td {
+    padding: 15px;
+}
+table#t01 {
+    background-color: #e8e8e8;
+}
+
+
