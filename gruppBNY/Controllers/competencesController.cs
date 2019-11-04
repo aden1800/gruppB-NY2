@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using gruppBNY.Models;
+using gruppBNY.ViewModel;
 
 namespace gruppBNY.Controllers
 {
@@ -65,12 +66,25 @@ namespace gruppBNY.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            competence competence = db.competence.Find(id);
-            if (competence == null)
+            var competenceVM = new competenceVM
+            {
+                competence = db.competence.Include(i => i.category).First(i => i.competence_Id == id)
+            };
+
+            if (competenceVM.competence == null)
             {
                 return HttpNotFound();
             }
-            return View(competence);
+            var catList = db.category.ToList();
+            competenceVM.Allcategories = catList.Select(o => new SelectListItem
+            {
+                Text = o.type_of_competence,
+                Value = o.category_Id.ToString()
+            });
+            ViewBag.freelancerID = new SelectList(db.Freelancer, "freelancer_Id", "Firstname", competenceVM.freelancer.freelancer_Id);
+            competence competence = db.competence.Find(id);
+         
+            return View(competenceVM);
         }
 
         // POST: competences/Edit/5
