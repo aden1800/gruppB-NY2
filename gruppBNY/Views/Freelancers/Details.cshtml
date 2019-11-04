@@ -8,7 +8,7 @@
 <h2 style="padding-left:8px;">@Html.DisplayFor(model => model.Firstname)  @Html.DisplayFor(model => model.Lastname) </h2>
 
 <div>
-    
+
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -83,7 +83,7 @@
             @Html.DisplayFor(model => model.Drivers_license)
         </dd>
         <dt>
-           Profile text
+            Profile text
         </dt>
 
         <dd>
@@ -92,6 +92,120 @@
 
 
     </dl>
+    <h2 style="padding-left:8px;">Education</h2>
+
+    <dl class="dl-horizontal">
+        <dt>
+            School name
+        </dt>
+        <dd>
+            @*Här ska "School_name" från "Education" in*@
+            Harvard
+        </dd>
+        <dt>
+            Date of exam
+        </dt>
+        <dd>
+            @*Här ska "Education_date" från "Education" in*@
+            2017-06-10
+        </dd>
+        <dt>
+            Subject
+        </dt>
+        <dd>
+            @*Här ska "Subject" från "Education" in*@
+            System development
+        </dd>
+        <dt>
+            Degree
+        </dt>
+        <dd>
+            @*Här ska "education_degree" från "Education" in*@
+            Master
+        </dd>
+    </dl>
+
+    <h2 style="padding-left:8px;">Work History</h2>
+    <dl class="dl-horizontal">
+        <dt>
+            Company
+        </dt>
+        <dd>
+            @*Här ska "Company" från "work_history" in*@
+            Google
+        </dd>
+        <dt>
+            Work position
+        </dt>
+        <dd>
+            @*Här ska "work_position" från "work_history" in*@
+            Project leader
+        </dd>
+        <dt>
+            Start date
+        </dt>
+        <dd>
+            @*Här ska "start_date" från "work_history" in*@
+            2017-07-01
+        </dd>
+        <dt>
+            End date
+        </dt>
+        <dd>
+            @*Här ska "end_date" från "work_history" in*@
+            2019-04-15
+        </dd>
+        <dt>
+            Work duties
+        </dt>
+        <dd>
+            @*Här ska "work_duties" från "work_history" in*@
+            Scrum master, leading projects
+        </dd>
+    </dl>
+
+    <h2 style="padding-left:8px;">Core abilities</h2>
+    <dl class="dl-horizontal">
+        <dt>
+            Abilities
+        </dt>
+        <dd>
+            @*Här ska "Ability" från "core_abilities"*@
+            Team work, problem solving
+        </dd>
+    </dl>
+
+    <h2 style="padding-left:8px;">Competence</h2>
+    <table class="Competence_table" style="margin-left:100px;">
+        <tr>
+            <th>
+                Competence
+            </th>
+            <th>
+                Scale
+            </th>
+        </tr>
+        <tr>
+            <td>
+                C#
+            </td>
+            <td>
+                5
+            </td>
+        </tr>
+    </table>
+
+    <h2 style="padding-left:8px;">Language</h2>
+    <dl class="dl-horizontal">
+        <dt>
+            Languages
+        </dt>
+        <dd>
+            @*Här ska "language" från "languages" in*@
+            English, swedish, french
+        </dd>
+    </dl>
+
 </div>
 <p>
 <p style="padding-left:8px;">

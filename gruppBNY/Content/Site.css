@@ -148,42 +148,25 @@ textarea {
     padding-left: 70px;
 }
 
-footer {
-    background-color: #222222;
-    width: 100%;
-    overflow: hidden;
-    opacity: 0.90;
+.education{
+    float: right;
 }
 
-ul.social li {
-    display: inline;
+.Competence_table {
+    border: 1px solid black;
+    padding: 15px;
+    background-color: #ededed;
     
 }
 
-.socialtext {
-    padding-left: 40px;
-}
+    .Competence_table th {
+        border: 1px solid black;
+        padding: 15px;
+    }
 
-.sectionfooter1 {
-    width: 29%;
-    float: left;
-    margin: 2% 2%;
-    text-align: center;
-    color: #ffffff;
-}
+    .Competence_table td {
+        border: 1px solid black;
+        padding: 15px;
+    }
 
-.sectionfooter2 {
-    width: 29%;
-    float: left;
-    margin: 2% 2%;
-    text-align: center;
-    color: #ffffff;
-}
 
-.sectionfooter3 {
-    width: 29%;
-    float: left;
-    margin: 2% 2%;
-    text-align: center;
-    color: #ffffff;
-}
