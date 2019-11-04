@@ -14,16 +14,10 @@ namespace gruppBNY.Models
     
     public partial class category
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public category()
-        {
-            this.competence = new HashSet<competence>();
-        }
-    
         public int category_Id { get; set; }
         public string type_of_competence { get; set; }
+        public Nullable<int> competence_id { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<competence> competence { get; set; }
+        public virtual competence competence { get; set; }
     }
 }

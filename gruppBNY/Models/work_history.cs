@@ -14,20 +14,14 @@ namespace gruppBNY.Models
     
     public partial class work_history
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public work_history()
-        {
-            this.Freelancer = new HashSet<Freelancer>();
-        }
-    
         public int work_Id { get; set; }
         public string company { get; set; }
         public string work_position { get; set; }
         public Nullable<System.DateTime> start_date { get; set; }
         public Nullable<System.DateTime> end_date { get; set; }
         public string work_duties { get; set; }
+        public Nullable<int> freelancer_id { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Freelancer> Freelancer { get; set; }
+        public virtual Freelancer Freelancer { get; set; }
     }
 }

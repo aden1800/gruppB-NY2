@@ -14,16 +14,10 @@ namespace gruppBNY.Models
     
     public partial class languages
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public languages()
-        {
-            this.Freelancer = new HashSet<Freelancer>();
-        }
-    
         public int languages_Id { get; set; }
         public string languages1 { get; set; }
+        public Nullable<int> freelancer_id { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Freelancer> Freelancer { get; set; }
+        public virtual Freelancer Freelancer { get; set; }
     }
 }

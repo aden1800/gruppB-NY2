@@ -11,6 +11,7 @@
           </Key>
           <Property Name="category_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="type_of_competence" Type="nchar" MaxLength="255" />
+          <Property Name="competence_id" Type="int" />
         </EntityType>
         <EntityType Name="competence">
           <Key>
@@ -19,14 +20,7 @@
           <Property Name="competence_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="competences" Type="nchar" MaxLength="255" Nullable="false" />
           <Property Name="scale" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="competence_category">
-          <Key>
-            <PropertyRef Name="competence_Id" />
-            <PropertyRef Name="category_id" />
-          </Key>
-          <Property Name="competence_Id" Type="int" Nullable="false" />
-          <Property Name="category_id" Type="int" Nullable="false" />
+          <Property Name="freelancer_id" Type="int" />
         </EntityType>
         <EntityType Name="core_abilities">
           <Key>
@@ -34,6 +28,7 @@
           </Key>
           <Property Name="core_abilities_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ability" Type="nchar" MaxLength="255" Nullable="false" />
+          <Property Name="freelancer_id" Type="int" />
         </EntityType>
         <EntityType Name="customer">
           <Key>
@@ -57,6 +52,7 @@
           <Property Name="education_date" Type="date" Nullable="false" />
           <Property Name="subject" Type="nchar" MaxLength="255" Nullable="false" />
           <Property Name="education_degree" Type="nchar" MaxLength="255" Nullable="false" />
+          <Property Name="freelancer_id" Type="int" />
         </EntityType>
         <EntityType Name="Freelancer">
           <Key>
@@ -76,52 +72,13 @@
           <Property Name="Drivers_license" Type="bit" />
           <Property Name="Profile_text" Type="nchar" MaxLength="255" />
         </EntityType>
-        <EntityType Name="freelancer_competence">
-          <Key>
-            <PropertyRef Name="freelancer_Id" />
-            <PropertyRef Name="competence_id" />
-          </Key>
-          <Property Name="freelancer_Id" Type="int" Nullable="false" />
-          <Property Name="competence_id" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="freelancer_coreabilities">
-          <Key>
-            <PropertyRef Name="freelancer_Id" />
-            <PropertyRef Name="core_abilities_id" />
-          </Key>
-          <Property Name="freelancer_Id" Type="int" Nullable="false" />
-          <Property Name="core_abilities_id" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Freelancer_Education">
-          <Key>
-            <PropertyRef Name="freelancer_Id" />
-            <PropertyRef Name="education_id" />
-          </Key>
-          <Property Name="freelancer_Id" Type="int" Nullable="false" />
-          <Property Name="education_id" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="freelancer_languages">
-          <Key>
-            <PropertyRef Name="freelancer_id" />
-            <PropertyRef Name="languages_id" />
-          </Key>
-          <Property Name="freelancer_id" Type="int" Nullable="false" />
-          <Property Name="languages_id" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="freelancer_workhistory">
-          <Key>
-            <PropertyRef Name="freelancer_Id" />
-            <PropertyRef Name="work_id" />
-          </Key>
-          <Property Name="freelancer_Id" Type="int" Nullable="false" />
-          <Property Name="work_id" Type="int" Nullable="false" />
-        </EntityType>
         <EntityType Name="languages">
           <Key>
             <PropertyRef Name="languages_Id" />
           </Key>
           <Property Name="languages_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="languages" Type="nchar" MaxLength="255" />
+          <Property Name="freelancer_id" Type="int" />
         </EntityType>
         <EntityType Name="work_history">
           <Key>
@@ -133,213 +90,112 @@
           <Property Name="start_date" Type="date" />
           <Property Name="end_date" Type="date" />
           <Property Name="work_duties" Type="nchar" MaxLength="255" />
+          <Property Name="freelancer_id" Type="int" />
         </EntityType>
-        <Association Name="FK__competenc__categ__4E88ABD4">
-          <End Role="category" Type="Self.category" Multiplicity="1" />
-          <End Role="competence_category" Type="Self.competence_category" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="category">
-              <PropertyRef Name="category_Id" />
-            </Principal>
-            <Dependent Role="competence_category">
-              <PropertyRef Name="category_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__competenc__compe__4D94879B">
-          <End Role="competence" Type="Self.competence" Multiplicity="1" />
-          <End Role="competence_category" Type="Self.competence_category" Multiplicity="*" />
+        <Association Name="FK__category__compet__778AC167">
+          <End Role="competence" Type="Self.competence" Multiplicity="0..1" />
+          <End Role="category" Type="Self.category" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="competence">
               <PropertyRef Name="competence_Id" />
             </Principal>
-            <Dependent Role="competence_category">
-              <PropertyRef Name="competence_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__freelance__compe__59FA5E80">
-          <End Role="competence" Type="Self.competence" Multiplicity="1" />
-          <End Role="freelancer_competence" Type="Self.freelancer_competence" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="competence">
-              <PropertyRef Name="competence_Id" />
-            </Principal>
-            <Dependent Role="freelancer_competence">
+            <Dependent Role="category">
               <PropertyRef Name="competence_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__freelance__core___5DCAEF64">
-          <End Role="core_abilities" Type="Self.core_abilities" Multiplicity="1" />
-          <End Role="freelancer_coreabilities" Type="Self.freelancer_coreabilities" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="core_abilities">
-              <PropertyRef Name="core_abilities_Id" />
-            </Principal>
-            <Dependent Role="freelancer_coreabilities">
-              <PropertyRef Name="core_abilities_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Freelance__educa__619B8048">
-          <End Role="education" Type="Self.education" Multiplicity="1" />
-          <End Role="Freelancer_Education" Type="Self.Freelancer_Education" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="education">
-              <PropertyRef Name="education_Id" />
-            </Principal>
-            <Dependent Role="Freelancer_Education">
-              <PropertyRef Name="education_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__freelance__freel__59063A47">
-          <End Role="Freelancer" Type="Self.Freelancer" Multiplicity="1" />
-          <End Role="freelancer_competence" Type="Self.freelancer_competence" Multiplicity="*" />
+        <Association Name="FK__competenc__freel__76969D2E">
+          <End Role="Freelancer" Type="Self.Freelancer" Multiplicity="0..1" />
+          <End Role="competence" Type="Self.competence" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Freelancer">
               <PropertyRef Name="freelancer_Id" />
             </Principal>
-            <Dependent Role="freelancer_competence">
-              <PropertyRef Name="freelancer_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__freelance__freel__5CD6CB2B">
-          <End Role="Freelancer" Type="Self.Freelancer" Multiplicity="1" />
-          <End Role="freelancer_coreabilities" Type="Self.freelancer_coreabilities" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Freelancer">
-              <PropertyRef Name="freelancer_Id" />
-            </Principal>
-            <Dependent Role="freelancer_coreabilities">
-              <PropertyRef Name="freelancer_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Freelance__freel__60A75C0F">
-          <End Role="Freelancer" Type="Self.Freelancer" Multiplicity="1" />
-          <End Role="Freelancer_Education" Type="Self.Freelancer_Education" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Freelancer">
-              <PropertyRef Name="freelancer_Id" />
-            </Principal>
-            <Dependent Role="Freelancer_Education">
-              <PropertyRef Name="freelancer_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__freelance__freel__66603565">
-          <End Role="Freelancer" Type="Self.Freelancer" Multiplicity="1" />
-          <End Role="freelancer_languages" Type="Self.freelancer_languages" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Freelancer">
-              <PropertyRef Name="freelancer_Id" />
-            </Principal>
-            <Dependent Role="freelancer_languages">
+            <Dependent Role="competence">
               <PropertyRef Name="freelancer_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__freelance__freel__6C190EBB">
-          <End Role="Freelancer" Type="Self.Freelancer" Multiplicity="1" />
-          <End Role="freelancer_workhistory" Type="Self.freelancer_workhistory" Multiplicity="*" />
+        <Association Name="FK__core_abil__freel__75A278F5">
+          <End Role="Freelancer" Type="Self.Freelancer" Multiplicity="0..1" />
+          <End Role="core_abilities" Type="Self.core_abilities" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Freelancer">
               <PropertyRef Name="freelancer_Id" />
             </Principal>
-            <Dependent Role="freelancer_workhistory">
+            <Dependent Role="core_abilities">
+              <PropertyRef Name="freelancer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__education__freel__74AE54BC">
+          <End Role="Freelancer" Type="Self.Freelancer" Multiplicity="0..1" />
+          <End Role="education" Type="Self.education" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Freelancer">
               <PropertyRef Name="freelancer_Id" />
+            </Principal>
+            <Dependent Role="education">
+              <PropertyRef Name="freelancer_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__freelance__langu__6754599E">
-          <End Role="languages" Type="Self.languages" Multiplicity="1" />
-          <End Role="freelancer_languages" Type="Self.freelancer_languages" Multiplicity="*" />
+        <Association Name="FK__languages__freel__73BA3083">
+          <End Role="Freelancer" Type="Self.Freelancer" Multiplicity="0..1" />
+          <End Role="languages" Type="Self.languages" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="languages">
-              <PropertyRef Name="languages_Id" />
+            <Principal Role="Freelancer">
+              <PropertyRef Name="freelancer_Id" />
             </Principal>
-            <Dependent Role="freelancer_languages">
-              <PropertyRef Name="languages_id" />
+            <Dependent Role="languages">
+              <PropertyRef Name="freelancer_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__freelance__work___6D0D32F4">
-          <End Role="work_history" Type="Self.work_history" Multiplicity="1" />
-          <End Role="freelancer_workhistory" Type="Self.freelancer_workhistory" Multiplicity="*" />
+        <Association Name="FK__work_hist__freel__72C60C4A">
+          <End Role="Freelancer" Type="Self.Freelancer" Multiplicity="0..1" />
+          <End Role="work_history" Type="Self.work_history" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="work_history">
-              <PropertyRef Name="work_Id" />
+            <Principal Role="Freelancer">
+              <PropertyRef Name="freelancer_Id" />
             </Principal>
-            <Dependent Role="freelancer_workhistory">
-              <PropertyRef Name="work_id" />
+            <Dependent Role="work_history">
+              <PropertyRef Name="freelancer_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="gruppBModelStoreContainer">
           <EntitySet Name="category" EntityType="Self.category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="competence" EntityType="Self.competence" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="competence_category" EntityType="Self.competence_category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="core_abilities" EntityType="Self.core_abilities" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="education" EntityType="Self.education" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Freelancer" EntityType="Self.Freelancer" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="freelancer_competence" EntityType="Self.freelancer_competence" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="freelancer_coreabilities" EntityType="Self.freelancer_coreabilities" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Freelancer_Education" EntityType="Self.Freelancer_Education" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="freelancer_languages" EntityType="Self.freelancer_languages" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="freelancer_workhistory" EntityType="Self.freelancer_workhistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="languages" EntityType="Self.languages" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="work_history" EntityType="Self.work_history" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__competenc__categ__4E88ABD4" Association="Self.FK__competenc__categ__4E88ABD4">
+          <AssociationSet Name="FK__category__compet__778AC167" Association="Self.FK__category__compet__778AC167">
+            <End Role="competence" EntitySet="competence" />
             <End Role="category" EntitySet="category" />
-            <End Role="competence_category" EntitySet="competence_category" />
           </AssociationSet>
-          <AssociationSet Name="FK__competenc__compe__4D94879B" Association="Self.FK__competenc__compe__4D94879B">
+          <AssociationSet Name="FK__competenc__freel__76969D2E" Association="Self.FK__competenc__freel__76969D2E">
+            <End Role="Freelancer" EntitySet="Freelancer" />
             <End Role="competence" EntitySet="competence" />
-            <End Role="competence_category" EntitySet="competence_category" />
           </AssociationSet>
-          <AssociationSet Name="FK__freelance__compe__59FA5E80" Association="Self.FK__freelance__compe__59FA5E80">
-            <End Role="competence" EntitySet="competence" />
-            <End Role="freelancer_competence" EntitySet="freelancer_competence" />
-          </AssociationSet>
-          <AssociationSet Name="FK__freelance__core___5DCAEF64" Association="Self.FK__freelance__core___5DCAEF64">
+          <AssociationSet Name="FK__core_abil__freel__75A278F5" Association="Self.FK__core_abil__freel__75A278F5">
+            <End Role="Freelancer" EntitySet="Freelancer" />
             <End Role="core_abilities" EntitySet="core_abilities" />
-            <End Role="freelancer_coreabilities" EntitySet="freelancer_coreabilities" />
           </AssociationSet>
-          <AssociationSet Name="FK__Freelance__educa__619B8048" Association="Self.FK__Freelance__educa__619B8048">
+          <AssociationSet Name="FK__education__freel__74AE54BC" Association="Self.FK__education__freel__74AE54BC">
+            <End Role="Freelancer" EntitySet="Freelancer" />
             <End Role="education" EntitySet="education" />
-            <End Role="Freelancer_Education" EntitySet="Freelancer_Education" />
           </AssociationSet>
-          <AssociationSet Name="FK__freelance__freel__59063A47" Association="Self.FK__freelance__freel__59063A47">
+          <AssociationSet Name="FK__languages__freel__73BA3083" Association="Self.FK__languages__freel__73BA3083">
             <End Role="Freelancer" EntitySet="Freelancer" />
-            <End Role="freelancer_competence" EntitySet="freelancer_competence" />
-          </AssociationSet>
-          <AssociationSet Name="FK__freelance__freel__5CD6CB2B" Association="Self.FK__freelance__freel__5CD6CB2B">
-            <End Role="Freelancer" EntitySet="Freelancer" />
-            <End Role="freelancer_coreabilities" EntitySet="freelancer_coreabilities" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Freelance__freel__60A75C0F" Association="Self.FK__Freelance__freel__60A75C0F">
-            <End Role="Freelancer" EntitySet="Freelancer" />
-            <End Role="Freelancer_Education" EntitySet="Freelancer_Education" />
-          </AssociationSet>
-          <AssociationSet Name="FK__freelance__freel__66603565" Association="Self.FK__freelance__freel__66603565">
-            <End Role="Freelancer" EntitySet="Freelancer" />
-            <End Role="freelancer_languages" EntitySet="freelancer_languages" />
-          </AssociationSet>
-          <AssociationSet Name="FK__freelance__freel__6C190EBB" Association="Self.FK__freelance__freel__6C190EBB">
-            <End Role="Freelancer" EntitySet="Freelancer" />
-            <End Role="freelancer_workhistory" EntitySet="freelancer_workhistory" />
-          </AssociationSet>
-          <AssociationSet Name="FK__freelance__langu__6754599E" Association="Self.FK__freelance__langu__6754599E">
             <End Role="languages" EntitySet="languages" />
-            <End Role="freelancer_languages" EntitySet="freelancer_languages" />
           </AssociationSet>
-          <AssociationSet Name="FK__freelance__work___6D0D32F4" Association="Self.FK__freelance__work___6D0D32F4">
+          <AssociationSet Name="FK__work_hist__freel__72C60C4A" Association="Self.FK__work_hist__freel__72C60C4A">
+            <End Role="Freelancer" EntitySet="Freelancer" />
             <End Role="work_history" EntitySet="work_history" />
-            <End Role="freelancer_workhistory" EntitySet="freelancer_workhistory" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -353,7 +209,8 @@
           </Key>
           <Property Name="category_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="type_of_competence" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="competence" Relationship="Self.competence_category" FromRole="category" ToRole="competence" />
+          <Property Name="competence_id" Type="Int32" />
+          <NavigationProperty Name="competence" Relationship="Self.FK__category__compet__778AC167" FromRole="category" ToRole="competence" />
         </EntityType>
         <EntityType Name="competence">
           <Key>
@@ -362,8 +219,9 @@
           <Property Name="competence_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="competences" Type="String" MaxLength="255" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="scale" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="category" Relationship="Self.competence_category" FromRole="competence" ToRole="category" />
-          <NavigationProperty Name="Freelancer" Relationship="Self.freelancer_competence" FromRole="competence" ToRole="Freelancer" />
+          <Property Name="freelancer_id" Type="Int32" />
+          <NavigationProperty Name="category" Relationship="Self.FK__category__compet__778AC167" FromRole="competence" ToRole="category" />
+          <NavigationProperty Name="Freelancer" Relationship="Self.FK__competenc__freel__76969D2E" FromRole="competence" ToRole="Freelancer" />
         </EntityType>
         <EntityType Name="core_abilities">
           <Key>
@@ -371,7 +229,8 @@
           </Key>
           <Property Name="core_abilities_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ability" Type="String" MaxLength="255" FixedLength="true" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Freelancer" Relationship="Self.freelancer_coreabilities" FromRole="core_abilities" ToRole="Freelancer" />
+          <Property Name="freelancer_id" Type="Int32" />
+          <NavigationProperty Name="Freelancer" Relationship="Self.FK__core_abil__freel__75A278F5" FromRole="core_abilities" ToRole="Freelancer" />
         </EntityType>
         <EntityType Name="customer">
           <Key>
@@ -395,7 +254,8 @@
           <Property Name="education_date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="subject" Type="String" MaxLength="255" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="education_degree" Type="String" MaxLength="255" FixedLength="true" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Freelancer" Relationship="Self.Freelancer_Education" FromRole="education" ToRole="Freelancer" />
+          <Property Name="freelancer_id" Type="Int32" />
+          <NavigationProperty Name="Freelancer" Relationship="Self.FK__education__freel__74AE54BC" FromRole="education" ToRole="Freelancer" />
         </EntityType>
         <EntityType Name="Freelancer">
           <Key>
@@ -414,11 +274,11 @@
           <Property Name="Nationality" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
           <Property Name="Drivers_license" Type="Boolean" />
           <Property Name="Profile_text" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="competence" Relationship="Self.freelancer_competence" FromRole="Freelancer" ToRole="competence" />
-          <NavigationProperty Name="core_abilities" Relationship="Self.freelancer_coreabilities" FromRole="Freelancer" ToRole="core_abilities" />
-          <NavigationProperty Name="education" Relationship="Self.Freelancer_Education" FromRole="Freelancer" ToRole="education" />
-          <NavigationProperty Name="languages" Relationship="Self.freelancer_languages" FromRole="Freelancer" ToRole="languages" />
-          <NavigationProperty Name="work_history" Relationship="Self.freelancer_workhistory" FromRole="Freelancer" ToRole="work_history" />
+          <NavigationProperty Name="competence" Relationship="Self.FK__competenc__freel__76969D2E" FromRole="Freelancer" ToRole="competence" />
+          <NavigationProperty Name="core_abilities" Relationship="Self.FK__core_abil__freel__75A278F5" FromRole="Freelancer" ToRole="core_abilities" />
+          <NavigationProperty Name="education" Relationship="Self.FK__education__freel__74AE54BC" FromRole="Freelancer" ToRole="education" />
+          <NavigationProperty Name="languages" Relationship="Self.FK__languages__freel__73BA3083" FromRole="Freelancer" ToRole="languages" />
+          <NavigationProperty Name="work_history" Relationship="Self.FK__work_hist__freel__72C60C4A" FromRole="Freelancer" ToRole="work_history" />
         </EntityType>
         <EntityType Name="languages">
           <Key>
@@ -426,7 +286,8 @@
           </Key>
           <Property Name="languages_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="languages1" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="Freelancer" Relationship="Self.freelancer_languages" FromRole="languages" ToRole="Freelancer" />
+          <Property Name="freelancer_id" Type="Int32" />
+          <NavigationProperty Name="Freelancer" Relationship="Self.FK__languages__freel__73BA3083" FromRole="languages" ToRole="Freelancer" />
         </EntityType>
         <EntityType Name="work_history">
           <Key>
@@ -438,33 +299,82 @@
           <Property Name="start_date" Type="DateTime" Precision="0" />
           <Property Name="end_date" Type="DateTime" Precision="0" />
           <Property Name="work_duties" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="Freelancer" Relationship="Self.freelancer_workhistory" FromRole="work_history" ToRole="Freelancer" />
+          <Property Name="freelancer_id" Type="Int32" />
+          <NavigationProperty Name="Freelancer" Relationship="Self.FK__work_hist__freel__72C60C4A" FromRole="work_history" ToRole="Freelancer" />
         </EntityType>
-        <Association Name="competence_category">
+        <Association Name="FK__category__compet__778AC167">
+          <End Role="competence" Type="Self.competence" Multiplicity="0..1" />
           <End Role="category" Type="Self.category" Multiplicity="*" />
-          <End Role="competence" Type="Self.competence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="competence">
+              <PropertyRef Name="competence_Id" />
+            </Principal>
+            <Dependent Role="category">
+              <PropertyRef Name="competence_id" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
-        <Association Name="freelancer_competence">
+        <Association Name="FK__competenc__freel__76969D2E">
+          <End Role="Freelancer" Type="Self.Freelancer" Multiplicity="0..1" />
           <End Role="competence" Type="Self.competence" Multiplicity="*" />
-          <End Role="Freelancer" Type="Self.Freelancer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Freelancer">
+              <PropertyRef Name="freelancer_Id" />
+            </Principal>
+            <Dependent Role="competence">
+              <PropertyRef Name="freelancer_id" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
-        <Association Name="freelancer_coreabilities">
+        <Association Name="FK__core_abil__freel__75A278F5">
+          <End Role="Freelancer" Type="Self.Freelancer" Multiplicity="0..1" />
           <End Role="core_abilities" Type="Self.core_abilities" Multiplicity="*" />
-          <End Role="Freelancer" Type="Self.Freelancer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Freelancer">
+              <PropertyRef Name="freelancer_Id" />
+            </Principal>
+            <Dependent Role="core_abilities">
+              <PropertyRef Name="freelancer_id" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
-        <Association Name="Freelancer_Education">
+        <Association Name="FK__education__freel__74AE54BC">
+          <End Role="Freelancer" Type="Self.Freelancer" Multiplicity="0..1" />
           <End Role="education" Type="Self.education" Multiplicity="*" />
-          <End Role="Freelancer" Type="Self.Freelancer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Freelancer">
+              <PropertyRef Name="freelancer_Id" />
+            </Principal>
+            <Dependent Role="education">
+              <PropertyRef Name="freelancer_id" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
-        <Association Name="freelancer_languages">
-          <End Role="Freelancer" Type="Self.Freelancer" Multiplicity="*" />
+        <Association Name="FK__languages__freel__73BA3083">
+          <End Role="Freelancer" Type="Self.Freelancer" Multiplicity="0..1" />
           <End Role="languages" Type="Self.languages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Freelancer">
+              <PropertyRef Name="freelancer_Id" />
+            </Principal>
+            <Dependent Role="languages">
+              <PropertyRef Name="freelancer_id" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
-        <Association Name="freelancer_workhistory">
-          <End Role="Freelancer" Type="Self.Freelancer" Multiplicity="*" />
+        <Association Name="FK__work_hist__freel__72C60C4A">
+          <End Role="Freelancer" Type="Self.Freelancer" Multiplicity="0..1" />
           <End Role="work_history" Type="Self.work_history" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Freelancer">
+              <PropertyRef Name="freelancer_Id" />
+            </Principal>
+            <Dependent Role="work_history">
+              <PropertyRef Name="freelancer_id" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="gruppBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="gruppBEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="category" EntityType="Self.category" />
           <EntitySet Name="competence" EntityType="Self.competence" />
           <EntitySet Name="core_abilities" EntityType="Self.core_abilities" />
@@ -473,27 +383,27 @@
           <EntitySet Name="Freelancer" EntityType="Self.Freelancer" />
           <EntitySet Name="languages" EntityType="Self.languages" />
           <EntitySet Name="work_history" EntityType="Self.work_history" />
-          <AssociationSet Name="competence_category" Association="Self.competence_category">
+          <AssociationSet Name="FK__category__compet__778AC167" Association="Self.FK__category__compet__778AC167">
+            <End Role="competence" EntitySet="competence" />
             <End Role="category" EntitySet="category" />
-            <End Role="competence" EntitySet="competence" />
           </AssociationSet>
-          <AssociationSet Name="freelancer_competence" Association="Self.freelancer_competence">
-            <End Role="competence" EntitySet="competence" />
+          <AssociationSet Name="FK__competenc__freel__76969D2E" Association="Self.FK__competenc__freel__76969D2E">
             <End Role="Freelancer" EntitySet="Freelancer" />
+            <End Role="competence" EntitySet="competence" />
           </AssociationSet>
-          <AssociationSet Name="freelancer_coreabilities" Association="Self.freelancer_coreabilities">
+          <AssociationSet Name="FK__core_abil__freel__75A278F5" Association="Self.FK__core_abil__freel__75A278F5">
+            <End Role="Freelancer" EntitySet="Freelancer" />
             <End Role="core_abilities" EntitySet="core_abilities" />
-            <End Role="Freelancer" EntitySet="Freelancer" />
           </AssociationSet>
-          <AssociationSet Name="Freelancer_Education" Association="Self.Freelancer_Education">
+          <AssociationSet Name="FK__education__freel__74AE54BC" Association="Self.FK__education__freel__74AE54BC">
+            <End Role="Freelancer" EntitySet="Freelancer" />
             <End Role="education" EntitySet="education" />
-            <End Role="Freelancer" EntitySet="Freelancer" />
           </AssociationSet>
-          <AssociationSet Name="freelancer_languages" Association="Self.freelancer_languages">
+          <AssociationSet Name="FK__languages__freel__73BA3083" Association="Self.FK__languages__freel__73BA3083">
             <End Role="Freelancer" EntitySet="Freelancer" />
             <End Role="languages" EntitySet="languages" />
           </AssociationSet>
-          <AssociationSet Name="freelancer_workhistory" Association="Self.freelancer_workhistory">
+          <AssociationSet Name="FK__work_hist__freel__72C60C4A" Association="Self.FK__work_hist__freel__72C60C4A">
             <End Role="Freelancer" EntitySet="Freelancer" />
             <End Role="work_history" EntitySet="work_history" />
           </AssociationSet>
@@ -503,12 +413,13 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="gruppBModelStoreContainer" CdmEntityContainer="gruppBEntities">
+        <EntityContainerMapping StorageEntityContainer="gruppBModelStoreContainer" CdmEntityContainer="gruppBEntities1">
           <EntitySetMapping Name="category">
             <EntityTypeMapping TypeName="gruppBModel.category">
               <MappingFragment StoreEntitySet="category">
                 <ScalarProperty Name="category_Id" ColumnName="category_Id" />
                 <ScalarProperty Name="type_of_competence" ColumnName="type_of_competence" />
+                <ScalarProperty Name="competence_id" ColumnName="competence_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -518,6 +429,7 @@
                 <ScalarProperty Name="competence_Id" ColumnName="competence_Id" />
                 <ScalarProperty Name="competences" ColumnName="competences" />
                 <ScalarProperty Name="scale" ColumnName="scale" />
+                <ScalarProperty Name="freelancer_id" ColumnName="freelancer_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -526,6 +438,7 @@
               <MappingFragment StoreEntitySet="core_abilities">
                 <ScalarProperty Name="core_abilities_Id" ColumnName="core_abilities_Id" />
                 <ScalarProperty Name="ability" ColumnName="ability" />
+                <ScalarProperty Name="freelancer_id" ColumnName="freelancer_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -551,6 +464,7 @@
                 <ScalarProperty Name="education_date" ColumnName="education_date" />
                 <ScalarProperty Name="subject" ColumnName="subject" />
                 <ScalarProperty Name="education_degree" ColumnName="education_degree" />
+                <ScalarProperty Name="freelancer_id" ColumnName="freelancer_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -578,6 +492,7 @@
               <MappingFragment StoreEntitySet="languages">
                 <ScalarProperty Name="languages_Id" ColumnName="languages_Id" />
                 <ScalarProperty Name="languages1" ColumnName="languages" />
+                <ScalarProperty Name="freelancer_id" ColumnName="freelancer_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -590,57 +505,10 @@
                 <ScalarProperty Name="start_date" ColumnName="start_date" />
                 <ScalarProperty Name="end_date" ColumnName="end_date" />
                 <ScalarProperty Name="work_duties" ColumnName="work_duties" />
+                <ScalarProperty Name="freelancer_id" ColumnName="freelancer_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="competence_category" TypeName="gruppBModel.competence_category" StoreEntitySet="competence_category">
-            <EndProperty Name="category">
-              <ScalarProperty Name="category_Id" ColumnName="category_id" />
-            </EndProperty>
-            <EndProperty Name="competence">
-              <ScalarProperty Name="competence_Id" ColumnName="competence_Id" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="freelancer_competence" TypeName="gruppBModel.freelancer_competence" StoreEntitySet="freelancer_competence">
-            <EndProperty Name="competence">
-              <ScalarProperty Name="competence_Id" ColumnName="competence_id" />
-            </EndProperty>
-            <EndProperty Name="Freelancer">
-              <ScalarProperty Name="freelancer_Id" ColumnName="freelancer_Id" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="freelancer_coreabilities" TypeName="gruppBModel.freelancer_coreabilities" StoreEntitySet="freelancer_coreabilities">
-            <EndProperty Name="core_abilities">
-              <ScalarProperty Name="core_abilities_Id" ColumnName="core_abilities_id" />
-            </EndProperty>
-            <EndProperty Name="Freelancer">
-              <ScalarProperty Name="freelancer_Id" ColumnName="freelancer_Id" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="Freelancer_Education" TypeName="gruppBModel.Freelancer_Education" StoreEntitySet="Freelancer_Education">
-            <EndProperty Name="education">
-              <ScalarProperty Name="education_Id" ColumnName="education_id" />
-            </EndProperty>
-            <EndProperty Name="Freelancer">
-              <ScalarProperty Name="freelancer_Id" ColumnName="freelancer_Id" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="freelancer_languages" TypeName="gruppBModel.freelancer_languages" StoreEntitySet="freelancer_languages">
-            <EndProperty Name="Freelancer">
-              <ScalarProperty Name="freelancer_Id" ColumnName="freelancer_id" />
-            </EndProperty>
-            <EndProperty Name="languages">
-              <ScalarProperty Name="languages_Id" ColumnName="languages_id" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="freelancer_workhistory" TypeName="gruppBModel.freelancer_workhistory" StoreEntitySet="freelancer_workhistory">
-            <EndProperty Name="Freelancer">
-              <ScalarProperty Name="freelancer_Id" ColumnName="freelancer_Id" />
-            </EndProperty>
-            <EndProperty Name="work_history">
-              <ScalarProperty Name="work_Id" ColumnName="work_id" />
-            </EndProperty>
-          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
