@@ -18,6 +18,7 @@ namespace gruppBNY.Controllers
         // GET: competences
         public ActionResult Index()
         {
+          
             return View(db.competence.ToList());
         }
 
@@ -81,8 +82,8 @@ namespace gruppBNY.Controllers
                 Text = o.type_of_competence,
                 Value = o.category_Id.ToString()
             });
-            ViewBag.freelancerID = new SelectList(db.Freelancer, "freelancer_Id", "Firstname", competenceVM.freelancer.freelancer_Id);
-            competence competence = db.competence.Find(id);
+            ViewBag.freelancer_Id = new SelectList(db.Freelancer, "freelancer_Id", "Firstname", competenceVM.freelancer.freelancer_Id);
+            
          
             return View(competenceVM);
         }

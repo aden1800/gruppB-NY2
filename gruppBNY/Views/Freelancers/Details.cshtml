@@ -97,7 +97,7 @@
             Driver Licens
         </dt>
 
-        <dd>
+        <dd>    
             @Html.DisplayFor(model => model.Drivers_license)
         </dd>
         <dt>
@@ -220,6 +220,7 @@
                 5
             </td>
         </tr>
+        @Html.ActionLink("Edit", "Edit", "competences", "competencesController",  new { id = Model.freelancer_Id })
     </table>
 </div>
     <a name="Languages"></a>
