@@ -1,5 +1,5 @@
-﻿@*@model gruppBNY.Models.competence*@
-@model gruppBNY.ViewModel.competenceVM
+﻿@model gruppBNY.Models.competence
+@*@model gruppBNY.ViewModel.competenceVM*@
 
 @{
     ViewBag.Title = "Edit";
@@ -13,36 +13,37 @@
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <h4>competence</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @*@Html.HiddenFor(model => model.competence_Id)*@
-
-        <div class="form-group">
-            @*@Html.LabelFor(model => model.competences, htmlAttributes: new { @class = "control-label col-md-2" })*@
-            @Html.LabelFor(model => model.Allcategories, "type_of_competence", new { @class = "control-label col-md-2"})
-            <div class="col-md-10">
-                @Html.ListBoxFor(m => m.ListOfCategories, Model.Allcategories)
-                @*@Html.EditorFor(model => model.competences, new { htmlAttributes = new { @class = "form-control" } })*@
-                @*@Html.ValidationMessageFor(model => model.competences, "", new { @class = "text-danger" })*@
-            </div>
-        </div>
-
-        <div class="form-group">
-            @*@Html.LabelFor(model => model.scale, htmlAttributes: new { @class = "control-label col-md-2" })*@
-            <div class="col-md-10">
-                @*@Html.EditorFor(model => model.scale, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.scale, "", new { @class = "text-danger" })*@
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
+<div class="form-horizontal">
+    <h4>competence</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.competence_Id)
+    @Html.HiddenFor(model => model.freelancer_id)
+   
+    <div class="form-group">
+        @Html.LabelFor(model => model.competences, htmlAttributes: new { @class = "control-label col-md-2" })
+        @*@Html.LabelFor(model => model.Allcategories, "type_of_competence", new { @class = "control-label col-md-2"})*@
+        <div class="col-md-10">
+            @*@Html.ListBoxFor(m => m.ListOfCategories, Model.Allcategories)*@
+            @Html.EditorFor(model => model.competences, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.competences, "", new { @class = "text-danger" })
         </div>
     </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.scale, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.scale, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.scale, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
 }
 
 <div>
