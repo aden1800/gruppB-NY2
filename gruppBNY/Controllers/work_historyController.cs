@@ -46,7 +46,7 @@ namespace gruppBNY.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "work_Id,company,work_position,start_date,end_date,work_duties")] work_history work_history)
+        public ActionResult Create([Bind(Include = "work_Id,company,work_position,start_date,end_date,work_duties, freelancer_Id")] work_history work_history)
         {
             if (ModelState.IsValid)
             {
@@ -59,7 +59,7 @@ namespace gruppBNY.Controllers
         }
 
         // GET: work_history/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int? id, int? id2)
         {
             if (id == null)
             {
@@ -78,7 +78,7 @@ namespace gruppBNY.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "work_Id,company,work_position,start_date,end_date,work_duties")] work_history work_history)
+        public ActionResult Edit([Bind(Include = "work_Id,company,work_position,start_date,end_date,work_duties, freelancer_Id")] work_history work_history)
         {
             if (ModelState.IsValid)
             {

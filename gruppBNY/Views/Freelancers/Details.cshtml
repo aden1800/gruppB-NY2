@@ -209,23 +209,26 @@
             <tr>
                 @foreach(var item2 in Model.work_history)
                 {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(item => item2.company)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(item => item2.work_position)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(item => item2.start_date)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(item => item2.end_date)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(item => item2.work_duties)
-                        </td>
-                        </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(item => item2.company)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => item2.work_position)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => item2.start_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => item2.end_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => item2.work_duties)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "work_history", new { id = item2.work_Id, id2 = item2.freelancer_id }, null)
+                </td>
+            </tr>
                 }
             </tr>
         </table>
@@ -318,6 +321,7 @@
                 @Html.DisplayFor(item => item2.languages1)
 
             </dd>
+
         }
 
     </dl>
