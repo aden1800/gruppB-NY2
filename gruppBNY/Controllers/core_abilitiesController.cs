@@ -59,7 +59,7 @@ namespace gruppBNY.Controllers
         }
 
         // GET: core_abilities/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int? id, int? id2)
         {
             if (id == null)
             {
@@ -78,7 +78,7 @@ namespace gruppBNY.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "core_abilities_Id,ability")] core_abilities core_abilities)
+        public ActionResult Edit([Bind(Include = "core_abilities_Id,ability,freelancer_Id")] core_abilities core_abilities)
         {
             if (ModelState.IsValid)
             {

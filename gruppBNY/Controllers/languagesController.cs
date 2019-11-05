@@ -59,7 +59,7 @@ namespace gruppBNY.Controllers
         }
 
         // GET: languages/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int? id, int? id2)
         {
             if (id == null)
             {
@@ -78,7 +78,7 @@ namespace gruppBNY.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "languages_Id,languages1")] languages languages)
+        public ActionResult Edit([Bind(Include = "languages_Id,languages1, freelancer_Id")] languages languages)
         {
             if (ModelState.IsValid)
             {

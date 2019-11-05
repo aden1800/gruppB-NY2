@@ -97,7 +97,7 @@
             Driver Licens
         </dt>
 
-        <dd>    
+        <dd>
             @Html.DisplayFor(model => model.Drivers_license)
         </dd>
         <dt>
@@ -107,8 +107,7 @@
         <dd>
             @Html.DisplayFor(model => model.Profile_text)
         </dd>
-
-
+         @Html.ActionLink("Edit", "Edit", new { id = Model.freelancer_Id })
     </dl>
     </div>
 
@@ -250,6 +249,9 @@
             <dd>
                 @Html.DisplayFor(item => item2.ability)
             </dd>
+            <dd>
+                @Html.ActionLink("Edit", "Edit", "core_abilities", new { id = item2.core_abilities_Id, id2 = item2.freelancer_id }, null)
+            </dd>
         }
 
     </dl>
@@ -319,12 +321,12 @@
         </dt>
         @foreach (var item2 in Model.languages)
         {
-
             <dd>
                 @Html.DisplayFor(item => item2.languages1)
-
             </dd>
-
+            <dd>
+                @Html.ActionLink("Edit", "Edit", "languages", new { id = item2.languages_Id, id2 = item2.freelancer_id }, null)
+            </dd>
         }
 
     </dl>
@@ -332,7 +334,6 @@
 </div>
 <p>
 <p style="padding-left:8px;">
-    @Html.ActionLink("Edit", "Edit", new { id = Model.freelancer_Id }) 
     <br />
     @Html.ActionLink("Back to List", "Index")
 </p>
