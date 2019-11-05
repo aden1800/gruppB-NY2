@@ -154,6 +154,7 @@
         <dl class="dl-horizontal">
             @foreach (var item2 in Model.work_history)
             {
+                <br>
                 <dt>
                     Company
                 </dt>
@@ -196,13 +197,14 @@
     <h2 style="padding-left:8px;">Core abilities</h2>
 <div>
     <dl class="dl-horizontal">
+        <dt>
+            Abilities:
+        </dt>
         @foreach (var item2 in Model.core_abilities)
         {
-            <dt>
-                Abilities
-            </dt>
+
             <dd>
-              @Html.DisplayFor(item => item2.ability)
+                @Html.DisplayFor(item => item2.ability)
             </dd>
         }
 
@@ -213,6 +215,7 @@
 <div>
     <table class="Competence_table" style="margin-left:100px;">
         <tr>
+            
             <th>
                 @Html.DisplayNameFor(model => model.competence)
             </th>
@@ -227,7 +230,9 @@
 
             @foreach (var item2 in Model.competence)
             {
+                <tr>
                 <td>
+                    
                     @Html.DisplayFor(item => item2.competences)
                 </td>
                 <td>
@@ -247,6 +252,7 @@
                 <td>
                     @Html.DisplayFor(item => item2.scale)
                 </td>
+                    </tr>
             }
            
         </tr>
@@ -257,14 +263,15 @@
     <h2 style="padding-left:8px;">Language</h2>
 <div>
     <dl class="dl-horizontal">
+        <dt>
+            Languages:
+        </dt>
         @foreach (var item2 in Model.languages)
         {
-            <dt>
-                Languages
-            </dt>
+
             <dd>
                 @Html.DisplayFor(item => item2.languages1)
-              
+
             </dd>
         }
 
