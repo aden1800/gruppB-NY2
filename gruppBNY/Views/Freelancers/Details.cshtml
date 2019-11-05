@@ -264,6 +264,9 @@
             <th>
                 Scale: 0-5
             </th>
+            <th>
+                Edit
+            </th>
         </tr>
         <tr>
 
@@ -291,8 +294,11 @@
                 <td>
                     @Html.DisplayFor(item => item2.scale)
                 </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "competences", new { id = item2.competence_Id, id2 = item2.freelancer_id }, null)
+                </td>
                     </tr>
-             @Html.ActionLink("Edit", "Edit", "competences", new { id = item2.competence_Id, id2 = item2.freelancer_id}, null)
+             
             }
            
         </tr>
