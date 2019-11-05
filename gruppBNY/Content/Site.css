@@ -157,7 +157,12 @@ textarea {
     border: 1px solid black;
     padding: 15px;
     background-color: #ededed;
+    margin-right: 80px;
     
+}
+
+.Competence_table td tr{
+    white-space: nowrap;
 }
 
     .Competence_table th {
