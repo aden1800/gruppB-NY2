@@ -46,7 +46,7 @@ namespace gruppBNY.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "education_Id,school_name,education_date,subject,education_degree")] education education)
+        public ActionResult Create([Bind(Include = "education_Id,school_name,education_date,subject,education_degree,freelancer_Id")] education education)
         {
             if (ModelState.IsValid)
             {
@@ -59,7 +59,7 @@ namespace gruppBNY.Controllers
         }
 
         // GET: educations/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int? id, int? id2)
         {
             if (id == null)
             {
@@ -78,7 +78,7 @@ namespace gruppBNY.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "education_Id,school_name,education_date,subject,education_degree")] education education)
+        public ActionResult Edit([Bind(Include = "education_Id,school_name,education_date,subject,education_degree,freelancer_Id")] education education)
         {
             if (ModelState.IsValid)
             {
