@@ -127,6 +127,9 @@
                 <th>
                     Subject
                 </th>
+                <th>
+                    Edit
+                </th>
             </tr>
             <tr>
                 @foreach(var item2 in Model.education)
@@ -207,6 +210,9 @@
                 <th>
                     Work Duties
                 </th>
+                <th>
+                    Edit
+                </th>
             </tr>
             <tr>
                 @foreach(var item2 in Model.work_history)
@@ -246,11 +252,11 @@
         @foreach (var item2 in Model.core_abilities)
         {
 
+        <dd>
+            @Html.DisplayFor(item => item2.ability) @Html.ActionLink("Edit", "Edit", "core_abilities", new { id = item2.core_abilities_Id, id2 = item2.freelancer_id }, null)
+        </dd>
             <dd>
-                @Html.DisplayFor(item => item2.ability)
-            </dd>
-            <dd>
-                @Html.ActionLink("Edit", "Edit", "core_abilities", new { id = item2.core_abilities_Id, id2 = item2.freelancer_id }, null)
+                
             </dd>
         }
 
@@ -321,11 +327,11 @@
         </dt>
         @foreach (var item2 in Model.languages)
         {
+        <dd>
+            @Html.DisplayFor(item => item2.languages1) @Html.ActionLink("Edit", "Edit", "languages", new { id = item2.languages_Id, id2 = item2.freelancer_id }, null)
+        </dd>
             <dd>
-                @Html.DisplayFor(item => item2.languages1)
-            </dd>
-            <dd>
-                @Html.ActionLink("Edit", "Edit", "languages", new { id = item2.languages_Id, id2 = item2.freelancer_id }, null)
+                
             </dd>
         }
 
