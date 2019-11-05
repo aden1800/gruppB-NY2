@@ -292,10 +292,10 @@
                     @Html.DisplayFor(item => item2.scale)
                 </td>
                     </tr>
+             @Html.ActionLink("Edit", "Edit", "competences", new { id = item2.competence_Id, id2 = item2.freelancer_id}, null)
             }
            
         </tr>
-        @Html.ActionLink("Edit", "Edit", "competencesController",  new { id = 1 })
     </table>
 </div>
     <a name="Languages"></a>
