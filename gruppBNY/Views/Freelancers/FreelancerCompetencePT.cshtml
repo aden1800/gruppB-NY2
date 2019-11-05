@@ -1,0 +1,27 @@
+﻿@model gruppBNY.Models.competence
+
+<div>
+    <h4>competence</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.competences)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.competences)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.scale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.scale)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.competence_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

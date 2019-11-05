@@ -115,89 +115,97 @@
     <h2 style="padding-left:8px;">Education</h2>
     <div>
     <dl class="dl-horizontal" >
-        <dt>
-            School name
-        </dt>
-        <dd>
-            @*Här ska "School_name" från "Education" in*@
-            Harvard
-        </dd>
-        <dt>
-            Date of exam
-        </dt>
-        <a name="Work-History"></a>
-        <dd>
-            @*Här ska "Education_date" från "Education" in*@
-            2017-06-10
-        </dd>
-        <dt>
-            Subject
-        </dt>
-        <dd>
-            @*Här ska "Subject" från "Education" in*@
-            System development
-        </dd>
-        <dt>
-            Degree
-        </dt>
-        <dd>
-            @*Här ska "education_degree" från "Education" in*@
-            Master
-        </dd>
+        
+        
+            <dt>
+                School name
+            </dt>
+            @foreach (var item2 in Model.education)
+            {
+              <dd>
+                   @Html.DisplayFor(item => item2.school_name)
+              </dd>
+              <dt>
+                  Date of Exam
+              </dt>
+             <dd>
+                   @Html.DisplayFor(item => item2.education_date)
+             </dd>
+             <dt>
+                 Degree
+             </dt>
+             <dd>
+                   @Html.DisplayFor(item => item2.education_degree)
+             </dd>
+             <dt>
+                 Subject
+             </dt>
+             <dd>
+                       @Html.DisplayFor(item => item2.subject)
+             </dd>
+           }
+  
     </dl>
     </div>
     
     <h2 style="padding-left:8px;">Work History</h2>
 <div>
-    <dl class="dl-horizontal">
-        <dt>
-            Company
-        </dt>
-        <dd>
-            @*Här ska "Company" från "work_history" in*@
-            Google
-        </dd>
-        <dt>
-            Work position
-        </dt>
-        <dd>
-            @*Här ska "work_position" från "work_history" in*@
-            Project leader
-        </dd>
-        <dt>
-            Start date
-        </dt>
-        <dd>
-            @*Här ska "start_date" från "work_history" in*@
-            2017-07-01
-        </dd>
-        <dt>
-            End date
-        </dt>
-        <dd>
-            @*Här ska "end_date" från "work_history" in*@
-            2019-04-15
-        </dd>
-        <dt>
-            Work duties
-        </dt>
-        <dd>
-            @*Här ska "work_duties" från "work_history" in*@
-            Scrum master, leading projects
-        </dd>
-    </dl>
+        <a name="Work-History"></a>
+        <dl class="dl-horizontal">
+            @foreach (var item2 in Model.work_history)
+            {
+                <dt>
+                    Company
+                </dt>
+                <dd>
+                  @Html.DisplayFor(item => item2.company)
+                </dd>
+                <dt>
+                    Work position
+                </dt>
+                <dd>
+                    @Html.DisplayFor(item => item2.work_position)
+                   
+                </dd>
+                <dt>
+                    Start date
+                </dt>
+                <dd>
+                    @Html.DisplayFor(item => item2.start_date)
+                    
+                </dd>
+                <dt>
+                    End date
+                </dt>
+                <dd>
+                    @Html.DisplayFor(item => item2.end_date)
+                    
+                </dd>
+                <dt>
+                    Work duties
+                </dt>
+                <dd>
+                   @Html.DisplayFor(item => item2.work_duties)
+                    Scrum master, leading projects
+                </dd>
+            }
+
+        </dl>
 </div>
     <a name="Core_abilities"></a>
     <h2 style="padding-left:8px;">Core abilities</h2>
 <div>
     <dl class="dl-horizontal">
-        <dt>
-            Abilities
-        </dt>
-        <dd>
-            @*Här ska "Ability" från "core_abilities"*@
-            Team work, problem solving
-        </dd>
+        @foreach (var item2 in Model.core_abilities)
+        {
+            <dt>
+                Abilities
+            </dt>
+            <dd>
+              @Html.DisplayFor(item => item2.ability)
+            </dd>
+        }
+
     </dl>
 </div>
     <a name="competence"></a>
@@ -206,34 +214,60 @@
     <table class="Competence_table" style="margin-left:100px;">
         <tr>
             <th>
-                Competence
+                @Html.DisplayNameFor(model => model.competence)
+            </th>
+            <th>
+                Category
             </th>
             <th>
                 Scale
             </th>
         </tr>
         <tr>
-            <td>
-                C#
-            </td>
-            <td>
-                5
-            </td>
+
+            @foreach (var item2 in Model.competence)
+            {
+                <td>
+                    @Html.DisplayFor(item => item2.competences)
+                </td>
+                <td>
+
+                    @foreach (var item3 in item2.category)
+                    {
+                        if (item3.competence_id == item2.competence_Id)
+                        {
+                            //var hejhej = item2.category;
+                            ////hejhej = item2.category;
+                            @Html.DisplayFor(item => item3.type_of_competence)
+                        }
+
+                    }
+                    @*@Html.DisplayFor(item => item2.category)*@
+                </td>
+                <td>
+                    @Html.DisplayFor(item => item2.scale)
+                </td>
+            }
+           
         </tr>
-        @Html.ActionLink("Edit", "Edit", "competences", "competencesController",  new { id = Model.freelancer_Id })
+        @Html.ActionLink("Edit", "Edit", "competencesController",  new { id = 1 })
     </table>
 </div>
     <a name="Languages"></a>
     <h2 style="padding-left:8px;">Language</h2>
 <div>
     <dl class="dl-horizontal">
-        <dt>
-            Languages
-        </dt>
-        <dd>
-            @*Här ska "language" från "languages" in*@
-            English, swedish, french
-        </dd>
+        @foreach (var item2 in Model.languages)
+        {
+            <dt>
+                Languages
+            </dt>
+            <dd>
+                @Html.DisplayFor(item => item2.languages1)
+              
+            </dd>
+        }
+
     </dl>
 
 </div>

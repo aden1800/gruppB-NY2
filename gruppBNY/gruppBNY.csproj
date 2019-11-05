@@ -296,6 +296,7 @@
     <Content Include="Views\work_history\Index.cshtml" />
     <Content Include="Views\LoginFree\Index.cshtml" />
     <Content Include="Views\LoginCustomer\Index.cshtml" />
+    <Content Include="Views\Freelancers\FreelancerCompetencePT.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

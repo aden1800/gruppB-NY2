@@ -72,6 +72,8 @@ namespace gruppBNY.Controllers
                 competence = db.competence.Include(i => i.category).First(i => i.competence_Id == id)
             };
 
+
+
             if (competenceVM.competence == null)
             {
                 return HttpNotFound();
