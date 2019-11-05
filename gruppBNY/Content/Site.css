@@ -117,10 +117,13 @@ textarea {
     text-align: center;
     padding: 3px;
 }
-
-.contact, .contactTop {
-    margin-left: 8px;
+.contactTop{
     text-align: center;
+}
+.contact {
+    margin-left: 325px;
+    margin-right: 70px;
+    float: left;
 }
 
 .MapImage {
@@ -128,25 +131,32 @@ textarea {
 }
 
 .MapImage img{
-    width: 75%;
-    height: 75%;
+    width: 50%;
+    height: 50%;
+    margin-right: 50px;
+    
 }
 
-.contactAside h1{
-    text-align: center;
+#Place{
+    margin-left: 200px;
+}
+
+.contactAside h1 {
+    margin-left: 50px;
 }
 
 .contactAside img {
     width: 50px;
     height: 50px;
     float: left;
-    margin-left: 470px;
-    margin-right: 20px;
+    
+    margin-right: 10px;
 
 }
 
-.contactAside address, #phonenumber{
-    padding-left: 70px;
+.contactAside address{
+    margin-left: 20px;
+    padding-left: 100px;
 }
 
 .education{
@@ -157,7 +167,12 @@ textarea {
     border: 1px solid black;
     padding: 15px;
     background-color: #ededed;
+    margin-right: 80px;
     
+}
+
+.Competence_table td tr{
+    white-space: nowrap;
 }
 
     .Competence_table th {
