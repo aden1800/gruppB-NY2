@@ -200,6 +200,7 @@
     <Content Include="Content\Images\facebook.png" />
     <Content Include="Content\Images\freelancersearch.png" />
     <Content Include="Content\Images\google-plus.png" />
+    <Content Include="Content\Images\HeaderFirstPage.jpg" />
     <Content Include="Content\Images\how_to_write_a_resume_banner.png" />
     <Content Include="Content\Images\ImageHeader.jpg" />
     <Content Include="Content\Images\map.png" />
