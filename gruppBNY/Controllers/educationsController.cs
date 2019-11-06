@@ -85,7 +85,7 @@ namespace gruppBNY.Controllers
             {
                 db.Entry(education).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Edit");
             }
             return View(education);
         }
