@@ -135,9 +135,6 @@
             <th>
                 Delete
             </th>
-            <th>
-                Create
-            </th>
         </tr>
         <tr>
             @foreach (var item2 in Model.education)
@@ -161,11 +158,12 @@
                 <td>
                     @Html.ActionLink("Delete", "Delete", "educations", new { id = item2.education_Id }, null)
                 </td>
-                <td>
-                    @Html.ActionLink("Add an education", "Create", "educations", new { id = Model.freelancer_Id }, null)
-                </td>
+
             </tr>
         }
+            <td>
+                @Html.ActionLink("Add an education", "Create", "educations", new { id = Model.freelancer_Id }, null)
+            </td>
         </table>
 
 
@@ -229,9 +227,6 @@
                 <th>
                     Delete
                 </th>
-                <th>
-                    Create
-                </th>
             </tr>
             <tr>
                 @foreach (var item2 in Model.work_history)
@@ -258,12 +253,12 @@
                     <td>
                         @Html.ActionLink("Delete", "Delete", "work_history", new { id = item2.work_Id }, null)
                     </td>
-                    <td>
-                        @Html.ActionLink("Add Work history", "Create", "work_history", new { id = Model.freelancer_Id }, null)
-                    </td>
+
                 </tr>
             }
-
+                <td>
+                    @Html.ActionLink("Add Work history", "Create", "work_history", new { id = Model.freelancer_Id }, null)
+                </td>
 
                 </tr>
             </table>
@@ -284,9 +279,6 @@
                     <th>
                         Delete
                     </th>
-                    <th>
-                        Create
-                    </th>
                 <tr>
                     @foreach (var item2 in Model.core_abilities)
                     {
@@ -300,12 +292,12 @@
                         <td>
                             @Html.ActionLink("Delete", "Delete", "core_abilities", new { id = item2.core_abilities_Id }, null)
                         </td>
-                        <td>
-                            @Html.ActionLink("Add a core ability", "Create", "core_abilities", new { id = Model.freelancer_Id }, null)
-                        </td>
+
                     </tr>
                 }
-
+                    <td>
+                        @Html.ActionLink("Add a core ability", "Create", "core_abilities", new { id = Model.freelancer_Id }, null)
+                    </td>
                     </tr>
                 </table>
             </div>
@@ -335,9 +327,6 @@
                         </th>
                         <th>
                             Delete
-                        </th>
-                        <th>
-                            Add competence
                         </th>
                     </tr>
                     <tr>
@@ -372,12 +361,13 @@
                             <td>
                                 @Html.ActionLink("Delete", "Delete", "competences", new { id = item2.competence_Id, id2 = item2.freelancer_id }, null)
                             </td>
-                            <td>
-                                @Html.ActionLink("Add Competence", "Create", "Competences", new { id = Model.freelancer_Id }, null)
-                            </td>
+
                         </tr>
 
                     }
+                        <td>
+                            @Html.ActionLink("Add Competence", "Create", "Competences", new { id = Model.freelancer_Id }, null)
+                        </td>
 
                         </tr>
                     </table>
@@ -397,30 +387,28 @@
                             <th>
                                 Delete
                             </th>
-                            <th>
-                                Add Language
-                            </th>
                         </tr>
                         <tr>
                             @foreach (var item2 in Model.languages)
                             {
-                                <tr>
-                                    <td>
-                                        @Html.DisplayFor(item => item2.languages1)
-                                    </td>
-                                    <td>
-                                        @Html.ActionLink("Edit", "Edit", "languages", new { id = item2.languages_Id, id2 = item2.freelancer_id }, null)
-                                    </td>
-                                    <td>
-                                        @Html.ActionLink("Delete", "Delete", "languages", new { id = item2.languages_Id }, null)
-                                    </td>
-                                    <td>
-                                        @Html.ActionLink("Add Language", "Create", "languages", new { id = Model.freelancer_Id }, null)
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(item => item2.languages1)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", "languages", new { id = item2.languages_Id, id2 = item2.freelancer_id }, null)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Delete", "Delete", "languages", new { id = item2.languages_Id }, null)
+                                </td>
 
-                            }
-                         </tr>
+                            </tr>
+
+                        }
+                            <td>
+                                @Html.ActionLink("Add Language", "Create", "languages", new { id = Model.freelancer_Id }, null)
+                            </td>
+                            </tr>
                         </table>
                 </div>
 
