@@ -1,0 +1,300 @@
+﻿@model gruppBNY.Models.Freelancer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<header class="DetailsHeader">
+    <div style="background-color:#323d47">
+
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="#Top">Go to top</a></li>
+            <li><a href="#Education">Education</a>
+            <li><a href="#Work-History">Work History</a>
+            <li><a href="#Core_abilities">Core Abilities</a>
+            <li><a href="#competence">Competence</a>
+            <li><a href="#Languages">Languages</a>
+        </ul>
+    </nav>
+</header>
+
+
+<img class="detailsprofile" src="~/Content/Images/addresume.png" />
+<h2 name="Top" style="padding-left:8px;">@Html.DisplayFor(model => model.Firstname)  @Html.DisplayFor(model => model.Lastname) </h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Firstname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Firstname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lastname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lastname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phonenumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phonenumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Birthday)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Birthday)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BirthCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BirthCity)
+        </dd>
+
+        <a name="Education"></a>
+        <dt>
+            @Html.DisplayNameFor(model => model.Nationality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nationality)
+        </dd>
+        <dt>
+            Driver Licens
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Drivers_license)
+        </dd>
+        <dt>
+            Profile text
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profile_text)
+        </dd>
+        
+    </dl>
+</div>
+
+<h2 style="padding-left:8px;">Education</h2>
+<div>
+    <table class="Competence_table" style="margin-left:100px;">
+        <tr>
+            <th>
+                School name
+            </th>
+            <th>
+                Date of Exam
+            </th>
+            <th>
+                Degree
+            </th>
+            <th>
+                Subject
+            </th>
+
+        </tr>
+        <tr>
+            @foreach (var item2 in Model.education)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(item => item2.school_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => item2.education_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => item2.education_degree)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => item2.subject)
+                </td>
+
+            </tr>
+        }
+            </tr>
+        </table>
+
+    </div>
+
+    <h2 style="padding-left:8px;">Work History</h2>
+    <div>
+        <a name="Work-History"></a>
+        <table class="Competence_table" style="margin-left:100px;">
+            <tr>
+                <th>
+                    Company
+                </th>
+                <th>
+                    Work Position
+                </th>
+                <th>
+                    Start Date
+                </th>
+                <th>
+                    End Date
+                </th>
+                <th>
+                    Work Duties
+                </th>
+
+            </tr>
+            <tr>
+                @foreach (var item2 in Model.work_history)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(item => item2.company)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(item => item2.work_position)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(item => item2.start_date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(item => item2.end_date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(item => item2.work_duties)
+                    </td>
+
+                </tr>
+            }
+                </tr>
+            </table>
+        </div>
+
+        <a name="Core_abilities"></a>
+        <h2 style="padding-left:8px;">Core abilities</h2>
+        <div>
+            <dl class="dl-horizontal">
+                <dt>
+                    Abilities:
+                </dt>
+                @foreach (var item2 in Model.core_abilities)
+                {
+
+                    <dd>
+                        @Html.DisplayFor(item => item2.ability) 
+                    </dd>
+                    <dd>
+
+                    </dd>
+                }
+
+            </dl>
+        </div>
+        <br />
+        <a name="competence"></a>
+        <h2 style="padding-left:8px;">Competence</h2>
+        <div>
+            <table class="Competence_table" style="margin-left:100px;">
+                <tr>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.competence)
+                    </th>
+                    <th>
+                        Category
+                    </th>
+                    <th>
+                        Scale: 0-5
+                    </th>
+
+                </tr>
+                <tr>
+
+                    @foreach (var item2 in Model.competence)
+                    {
+                    <tr>
+                        <td>
+
+                            @Html.DisplayFor(item => item2.competences)
+                        </td>
+                        <td>
+
+                            @foreach (var item3 in item2.category)
+                            {
+                                if (item3.competence_id == item2.competence_Id)
+                                {
+                                    //var hejhej = item2.category;
+                                    ////hejhej = item2.category;
+                                    @Html.DisplayFor(item => item3.type_of_competence)
+                                }
+
+                            }
+                            @*@Html.DisplayFor(item => item2.category)*@
+                        </td>
+                        <td>
+                            @Html.DisplayFor(item => item2.scale)
+                        </td>
+
+                    </tr>
+
+                }
+
+                    </tr>
+                </table>
+            </div>
+            <a name="Languages"></a>
+            <h2 style="padding-left:8px;">Language</h2>
+            <div>
+                <dl class="dl-horizontal">
+                    <dt>
+                        Languages:
+                    </dt>
+                    @foreach (var item2 in Model.languages)
+                    {
+                        <dd>
+                            @Html.DisplayFor(item => item2.languages1) 
+                        </dd>
+                        <dd>
+
+                        </dd>
+                    }
+
+                </dl>
+
+            </div>
+            <p>
+            <p style="padding-left:8px;">
+                <br />
+                @Html.ActionLink("Back to List", "Index")
+            </p>
