@@ -144,7 +144,7 @@ namespace gruppBNY.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id, int id2)
         {
-            competence competence = db.competence.Find(id2);
+            competence competence = db.competence.Find(id);
             
             db.competence.Remove(competence);
             db.SaveChanges();

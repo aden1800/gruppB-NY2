@@ -333,39 +333,46 @@
 
                         @foreach (var item2 in Model.competence)
                         {
-                        <tr>
-                            <td>
+                    <tr>
+                        <td>
 
-                                @Html.DisplayFor(item => item2.competences)
-                            </td>
-                            <td>
+                            @Html.DisplayFor(item => item2.competences)
+                        </td>
+                        <td>
 
-                                @foreach (var item3 in item2.category)
+                            @foreach (var item3 in item2.category)
+                            {
+                                if (item3.competence_id == item2.competence_Id)
                                 {
-                                    if (item3.competence_id == item2.competence_Id)
-                                    {
-                                        //var hejhej = item2.category;
-                                        ////hejhej = item2.category;
-                                        @Html.DisplayFor(item => item3.type_of_competence)
-                                    }
-
+                                    //var hejhej = item2.category;
+                                    ////hejhej = item2.category;
+                                    @Html.DisplayFor(item => item3.type_of_competence)
                                 }
-                                @*@Html.DisplayFor(item => item2.category)*@
-                            </td>
-                            <td>
-                                @Html.DisplayFor(item => item2.scale)
-                            </td>
-                            <td>
-                                @Html.ActionLink("Edit", "Edit", "competences", new { id = item2.competence_Id, id2 = item2.freelancer_id }, null)
-                            </td>
-                            <td>
-                                @Html.ActionLink("Delete", "Delete", "competences", new { id = item2.competence_Id, id2 = item2.freelancer_id }, null)
-                            </td>
-                            <td>
-                                @Html.ActionLink("Add Category", "Create", "categories", new { id = item2.competence_Id }, null)
-                            </td>
 
-                        </tr>
+                            }
+                            @*@Html.DisplayFor(item => item2.category)*@
+                        </td>
+                        <td>
+                            @Html.DisplayFor(item => item2.scale)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", "competences", new { id = item2.competence_Id, id2 = item2.freelancer_id }, null)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Delete", "Delete", "competences", new { id = item2.competence_Id, id2 = item2.freelancer_id }, null)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Add Category", "Create", "categories", new { id = item2.competence_Id }, null)
+                        </td>
+                        @foreach (var item3 in item2.category)
+                        {
+                            <td>
+                                @Html.ActionLink("Delete", "Delete", "categories", new { id = item3.category_Id }, null)
+                            </td>
+                        }
+
+
+                    </tr>
 
                     }
                         <td>
