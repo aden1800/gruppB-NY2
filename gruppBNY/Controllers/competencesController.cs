@@ -57,7 +57,7 @@ namespace gruppBNY.Controllers
                 competence.freelancer_id = id;
                 db.competence.Add(competence);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
 
             return View(competence);

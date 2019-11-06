@@ -53,7 +53,7 @@ namespace gruppBNY.Controllers
                 work_history.freelancer_id = id;
                 db.work_history.Add(work_history);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
 
             return View(work_history);

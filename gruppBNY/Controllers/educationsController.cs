@@ -53,7 +53,7 @@ namespace gruppBNY.Controllers
                 education.freelancer_id = id;
                 db.education.Add(education);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
 
             return View(education);

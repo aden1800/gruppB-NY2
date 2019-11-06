@@ -53,7 +53,7 @@ namespace gruppBNY.Controllers
                 core_abilities.freelancer_id = id;
                 db.core_abilities.Add(core_abilities);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
 
             return View(core_abilities);

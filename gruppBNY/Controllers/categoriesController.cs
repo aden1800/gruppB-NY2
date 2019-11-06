@@ -53,7 +53,7 @@ namespace gruppBNY.Controllers
                 category.competence_id = id;
                 db.category.Add(category);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
 
             return View(category);
