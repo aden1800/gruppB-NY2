@@ -135,6 +135,9 @@
             <th>
                 Delete
             </th>
+            <th>
+                Create
+            </th>
         </tr>
         <tr>
             @foreach (var item2 in Model.education)
@@ -158,12 +161,11 @@
                 <td>
                     @Html.ActionLink("Delete", "Delete", "educations", new { id = item2.education_Id }, null)
                 </td>
+                <td>
+                    @Html.ActionLink("Add an education", "Create", "educations", new { id = Model.freelancer_Id }, null)
+                </td>
             </tr>
         }
-            <td>
-                @Html.ActionLink("Add an education", "Create", "educations", new { id = Model.freelancer_Id }, null)
-            </td>
-            </tr>
         </table>
 
 
@@ -227,6 +229,9 @@
                 <th>
                     Delete
                 </th>
+                <th>
+                    Create
+                </th>
             </tr>
             <tr>
                 @foreach (var item2 in Model.work_history)
@@ -253,55 +258,25 @@
                     <td>
                         @Html.ActionLink("Delete", "Delete", "work_history", new { id = item2.work_Id }, null)
                     </td>
+                    <td>
+                        @Html.ActionLink("Add Work history", "Create", "work_history", new { id = Model.freelancer_Id }, null)
+                    </td>
                 </tr>
             }
-                <td>
-                    @Html.ActionLink("Add Work history", "Create", "work_history", new { id = Model.freelancer_Id }, null)
-                </td>
+
 
                 </tr>
             </table>
         </div>
+        <br />
 
-        <a name="Core_abilities"></a>
         <h2 style="padding-left:8px;">Core abilities</h2>
         <div>
-            <dl class="dl-horizontal">
-                <dt>
-                    Abilities:
-                </dt>
-                @foreach (var item2 in Model.core_abilities)
-                {
-
-                    <dd>
-                        @Html.DisplayFor(item => item2.ability) @Html.ActionLink("Edit", "Edit", "core_abilities", new { id = item2.core_abilities_Id, id2 = item2.freelancer_id }, null)
-                    </dd>
-                    <dd>
-                        @Html.ActionLink("Delete", "Delete", "core_abilities", new { id = item2.core_abilities_Id }, null)
-                    </dd>
-
-
-                }
-                <dd>
-                    @Html.ActionLink("Add a core ability", "Create", "core_abilities", new { id = Model.freelancer_Id }, null)
-                </dd>
-            </dl>
-        </div>
-        <br />
-        <a name="competence"></a>
-        <h2 style="padding-left:8px;">Competence</h2>
-        <div>
+            <a name="Core_abilities"></a>
             <table class="Competence_table" style="margin-left:100px;">
                 <tr>
-
                     <th>
-                        @Html.DisplayNameFor(model => model.competence)
-                    </th>
-                    <th>
-                        Category
-                    </th>
-                    <th>
-                        Scale: 0-5
+                        @Html.DisplayNameFor(model => model.core_abilities)
                     </th>
                     <th>
                         Edit
@@ -309,70 +284,148 @@
                     <th>
                         Delete
                     </th>
-                </tr>
+                    <th>
+                        Create
+                    </th>
                 <tr>
-
-                    @foreach (var item2 in Model.competence)
+                    @foreach (var item2 in Model.core_abilities)
                     {
                     <tr>
                         <td>
-
-                            @Html.DisplayFor(item => item2.competences)
+                            @Html.DisplayFor(item => item2.ability)
                         </td>
                         <td>
-
-                            @foreach (var item3 in item2.category)
-                            {
-                                if (item3.competence_id == item2.competence_Id)
-                                {
-                                    //var hejhej = item2.category;
-                                    ////hejhej = item2.category;
-                                    @Html.DisplayFor(item => item3.type_of_competence)
-                                }
-
-                            }
-                            @*@Html.DisplayFor(item => item2.category)*@
+                            @Html.ActionLink("Edit", "Edit", "core_abilities", new { id = item2.core_abilities_Id, id2 = item2.freelancer_id }, null)
                         </td>
                         <td>
-                            @Html.DisplayFor(item => item2.scale)
+                            @Html.ActionLink("Delete", "Delete", "core_abilities", new { id = item2.core_abilities_Id }, null)
                         </td>
                         <td>
-                            @Html.ActionLink("Edit", "Edit", "competences", new { id = item2.competence_Id, id2 = item2.freelancer_id }, null)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Delete", "Delete", "competences", new { id = item2.competence_Id, id2 = item2.freelancer_id }, null)
+                            @Html.ActionLink("Add a core ability", "Create", "core_abilities", new { id = Model.freelancer_Id }, null)
                         </td>
                     </tr>
-
                 }
 
                     </tr>
                 </table>
             </div>
-            <a name="Languages"></a>
-            <h2 style="padding-left:8px;">Language</h2>
+
+
+
+
+            <br />
+
+            <h2 style="padding-left:8px;">Competence</h2>
             <div>
-                <dl class="dl-horizontal">
-                    <dt>
-                        Languages:
-                    </dt>
-                    @foreach (var item2 in Model.languages)
-                    {
-                        <dd>
-                            @Html.DisplayFor(item => item2.languages1) @Html.ActionLink("Edit", "Edit", "languages", new { id = item2.languages_Id, id2 = item2.freelancer_id }, null)
-                            @Html.ActionLink("Delete", "Delete", "languages", new { id = item2.languages_Id }, null)
-                        </dd>
+                <a name="competence"></a>
+                <table class="Competence_table" style="margin-left:100px;">
+                    <tr>
+
+                        <th>
+                            @Html.DisplayNameFor(model => model.competence)
+                        </th>
+                        <th>
+                            Category
+                        </th>
+                        <th>
+                            Scale: 0-5
+                        </th>
+                        <th>
+                            Edit
+                        </th>
+                        <th>
+                            Delete
+                        </th>
+                        <th>
+                            Add competence
+                        </th>
+                    </tr>
+                    <tr>
+
+                        @foreach (var item2 in Model.competence)
+                        {
+                        <tr>
+                            <td>
+
+                                @Html.DisplayFor(item => item2.competences)
+                            </td>
+                            <td>
+
+                                @foreach (var item3 in item2.category)
+                                {
+                                    if (item3.competence_id == item2.competence_Id)
+                                    {
+                                        //var hejhej = item2.category;
+                                        ////hejhej = item2.category;
+                                        @Html.DisplayFor(item => item3.type_of_competence)
+                                    }
+
+                                }
+                                @*@Html.DisplayFor(item => item2.category)*@
+                            </td>
+                            <td>
+                                @Html.DisplayFor(item => item2.scale)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", "competences", new { id = item2.competence_Id, id2 = item2.freelancer_id }, null)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Delete", "Delete", "competences", new { id = item2.competence_Id, id2 = item2.freelancer_id }, null)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Add Competence", "Create", "Competences", new { id = Model.freelancer_Id }, null)
+                            </td>
+                        </tr>
 
                     }
-                    <dd>
-                        @Html.ActionLink("Add Language", "Create", "languages", new { id = Model.freelancer_Id }, null)
 
-                    </dd>
-                </dl>
+                        </tr>
+                    </table>
+                </div>
 
-            </div>
-            <p>
-            <p style="padding-left:8px;">
-                <br />
-                @Html.ActionLink("Back to List", "Index")
-            </p>
+                <h2 style="padding-left:8px;">Language</h2>
+                <div>
+                    <a name="Languages"></a>
+                    <table class="Competence_table" style="margin-left:100px;">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.languages)
+                            </th>
+                            <th>
+                                Edit
+                            </th>
+                            <th>
+                                Delete
+                            </th>
+                            <th>
+                                Add Language
+                            </th>
+                        </tr>
+                        <tr>
+                            @foreach (var item2 in Model.languages)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(item => item2.languages1)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", "languages", new { id = item2.languages_Id, id2 = item2.freelancer_id }, null)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Delete", "Delete", "languages", new { id = item2.languages_Id }, null)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Add Language", "Create", "languages", new { id = Model.freelancer_Id }, null)
+                                    </td>
+                                </tr>
+
+                            }
+                         </tr>
+                        </table>
+                </div>
+
+                <p>
+                <p style="padding-left:8px;">
+                    <br />
+                    @Html.ActionLink("Back to List", "Index")
+                </p>
