@@ -134,6 +134,7 @@
     <Compile Include="Controllers\customersController.cs" />
     <Compile Include="Controllers\educationsController.cs" />
     <Compile Include="Controllers\FreelancerCompetenceDetails.cs" />
+    <Compile Include="Controllers\FreelancerCustomerController.cs" />
     <Compile Include="Controllers\FreelancersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\languagesController.cs" />
@@ -301,6 +302,11 @@
     <Content Include="Views\LoginCustomer\Index.cshtml" />
     <Content Include="Views\Freelancers\FreelancerCompetencePT.cshtml" />
     <Content Include="Views\languages\AddLanguage.cshtml" />
+    <Content Include="Views\FreelancerCustomer\Create.cshtml" />
+    <Content Include="Views\FreelancerCustomer\Delete.cshtml" />
+    <Content Include="Views\FreelancerCustomer\Details.cshtml" />
+    <Content Include="Views\FreelancerCustomer\Edit.cshtml" />
+    <Content Include="Views\FreelancerCustomer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
