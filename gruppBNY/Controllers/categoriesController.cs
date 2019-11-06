@@ -52,7 +52,7 @@ namespace gruppBNY.Controllers
             {
                 db.category.Add(category);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
 
             return View(category);

@@ -22,7 +22,8 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
@@ -30,4 +31,17 @@
             @Html.ActionLink("Back to List", "Index")
         </div>
     }
+</div>
+
+<div>
+    <button onclick="goBack()">Go Back to your profile</button>
+
+    <script>
+        function goBack() {
+            window.history.back();
+            window.history.back();
+
+
+        }
+    </script>
 </div>

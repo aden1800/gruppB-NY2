@@ -53,7 +53,7 @@ namespace gruppBNY.Controllers
                 languages.freelancer_id = id;
                 db.languages.Add(languages);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
 
             return View(languages);
