@@ -37,6 +37,29 @@ namespace gruppBNY.Controllers
             return View(db.Freelancer.ToList());
         }
 
+        public ActionResult Search(string firstname)
+        {
+            if (firstname == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            List<Freelancer> freelancerList = db.Freelancer.ToList();
+            if (freelancerList == null)
+            {
+                return HttpNotFound();
+            }
+            List<Freelancer> freelancers = new List<Freelancer>();
+            foreach (var item in freelancerList)
+            {
+                if(item.Firstname.Contains(firstname))
+                {
+                    freelancers.Add(item);
+                }
+            }
+            return View(freelancers);
+        }
+
+
         // GET: Freelancers/Details/5
         public ActionResult Details(int? id)
         {

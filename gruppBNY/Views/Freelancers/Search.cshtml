@@ -1,0 +1,100 @@
+﻿@model IEnumerable<gruppBNY.Models.Freelancer>
+
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Search</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Firstname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lastname)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Username)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.Feelancer_Password)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phonenumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Birthday)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BirthCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nationality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Drivers_license)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Profile_text)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Firstname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lastname)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Feelancer_Password)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phonenumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Birthday)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BirthCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nationality)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Drivers_license)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Profile_text)
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.freelancer_Id }) |*@
+            @Html.ActionLink("Details", "Details", new { id=item.freelancer_Id }) 
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.freelancer_Id })*@
+        </td>
+    </tr>
+}
+
+</table>
