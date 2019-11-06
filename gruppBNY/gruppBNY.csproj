@@ -308,6 +308,7 @@
     <Content Include="Views\FreelancerCustomer\Edit.cshtml" />
     <Content Include="Views\FreelancerCustomer\Index.cshtml" />
     <Content Include="Views\Freelancers\Search.cshtml" />
+    <Content Include="Views\competences\categoriePartialView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
