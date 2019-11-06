@@ -320,6 +320,10 @@
                             Category
                         </th>
                         <th>
+                            Delete category
+                            
+                        </th>
+                        <th>
                             Scale: 0-5
                         </th>
                         <th>
@@ -352,9 +356,17 @@
                             }
                             @*@Html.DisplayFor(item => item2.category)*@
                         </td>
+                        @foreach (var item3 in item2.category)
+                        {
+                            <td>
+                                @Html.ActionLink("Delete", "Delete", "categories", new { id = item3.category_Id }, null)
+                            </td>
+                        }
+
                         <td>
                             @Html.DisplayFor(item => item2.scale)
                         </td>
+
                         <td>
                             @Html.ActionLink("Edit", "Edit", "competences", new { id = item2.competence_Id, id2 = item2.freelancer_id }, null)
                         </td>
@@ -364,12 +376,6 @@
                         <td>
                             @Html.ActionLink("Add Category", "Create", "categories", new { id = item2.competence_Id }, null)
                         </td>
-                        @foreach (var item3 in item2.category)
-                        {
-                            <td>
-                                @Html.ActionLink("Delete", "Delete", "categories", new { id = item3.category_Id }, null)
-                            </td>
-                        }
 
 
                     </tr>
