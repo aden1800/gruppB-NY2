@@ -263,7 +263,7 @@ ul.social li {
 
 /* Dropdown Button */
 .dropbtn {
-    background-color: #4CAF50;
+    background-color: #828f8e;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -296,7 +296,7 @@ ul.social li {
 
         /* Change color of dropdown links on hover */
         .dropdown-content a:hover {
-            background-color: #ddd;
+            background-color: #5f6968;
         }
 
 /* Show the dropdown menu on hover */
@@ -306,5 +306,5 @@ ul.social li {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+    background-color: #5f6968;
 }
