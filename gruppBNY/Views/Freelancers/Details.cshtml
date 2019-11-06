@@ -361,12 +361,16 @@
                             <td>
                                 @Html.ActionLink("Delete", "Delete", "competences", new { id = item2.competence_Id, id2 = item2.freelancer_id }, null)
                             </td>
+                            <td>
+                                @Html.ActionLink("Add Category", "Create", "categories", new { id = item2.competence_Id }, null)
+                            </td>
 
                         </tr>
 
                     }
                         <td>
-                            @Html.ActionLink("Add Competence", "Create", "Competences", new { id = Model.freelancer_Id }, null)
+                            @Html.ActionLink("Add Competence", "Create", "Competences", new { id = Model.freelancer_Id}, null)
+                            
                         </td>
 
                         </tr>

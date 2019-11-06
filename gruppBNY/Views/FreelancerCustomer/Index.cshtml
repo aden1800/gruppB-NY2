@@ -16,6 +16,36 @@
     <p id="freelancerText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </div>
 
+<input type="text" id="myInput" placeholder="Search">
+<button type="button" id="searchBtn" onclick="myFunction">Search</button>
+
+<script>
+    document.getElementById("searchBtn").onclick = function () { myFunction() };
+
+    function myFunction() {
+
+        var inputVal = document.getElementById("myInput").value;
+        window.location.href = "/FreelancerCustomer/Search?value=" + inputVal;
+    }
+</script>
+
+<script>
+    var input = document.getElementById("myInput");
+
+    function myFunction2() {
+        input.addEventListener("keyup", function(event) {
+          // Number 13 is the "Enter" key on the keyboard
+          if (event.keyCode === 13) {
+            // Cancel the default action, if needed
+            event.preventDefault();
+            // Trigger the button element with a click
+            document.getElementById("myBtn").click();
+          }
+        });
+        var inputVal = document.getElementById("myInput").value;
+        window.location.href = "/FreelancerCustomer/Search?value=" + inputVal;
+    }
+</script>
 
 <p>
     @*@Html.ActionLink("Create New", "Create")*@
@@ -91,9 +121,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Birthday)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.BirthCity)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.Nationality)
             </td>

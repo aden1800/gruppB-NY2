@@ -37,9 +37,9 @@ namespace gruppBNY.Controllers
             return View(db.Freelancer.ToList());
         }
 
-        public ActionResult Search(string firstname)
+        public ActionResult Search(string value)
         {
-            if (firstname == null)
+            if (value == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -51,9 +51,28 @@ namespace gruppBNY.Controllers
             List<Freelancer> freelancers = new List<Freelancer>();
             foreach (var item in freelancerList)
             {
-                if(item.Firstname.Contains(firstname))
+                if(item.Firstname.Contains(value))
                 {
                     freelancers.Add(item);
+                }
+                if (item.Lastname.Contains(value))
+                {
+                    freelancers.Add(item);
+                }
+                if (item.Nationality.Contains(value))
+                {
+                    freelancers.Add(item);
+                }
+                if (item.Phonenumber.Contains(value))
+                {
+                    freelancers.Add(item);
+                }
+                foreach (var item2 in item.competence)
+                {
+                    if (item2.competences.Contains(value))
+                    {
+                        freelancers.Add(item);
+                    }
                 }
             }
             return View(freelancers);

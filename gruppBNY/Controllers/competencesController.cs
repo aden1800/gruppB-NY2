@@ -48,10 +48,13 @@ namespace gruppBNY.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "competence_Id,competences,scale")] competence competence)
+        public ActionResult Create([Bind(Include = "competence_Id,competences,scale, freelancer_Id, category_Id, type_of_competence")] competence competence, int? id)
         {
             if (ModelState.IsValid)
             {
+                
+                
+                competence.freelancer_id = id;
                 db.competence.Add(competence);
                 db.SaveChanges();
                 return RedirectToAction("Create");
