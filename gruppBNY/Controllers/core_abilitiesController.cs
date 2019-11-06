@@ -85,7 +85,7 @@ namespace gruppBNY.Controllers
             {
                 db.Entry(core_abilities).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Edit");
             }
             return View(core_abilities);
         }
