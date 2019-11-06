@@ -46,10 +46,11 @@ namespace gruppBNY.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "work_Id,company,work_position,start_date,end_date,work_duties, freelancer_Id")] work_history work_history)
+        public ActionResult Create([Bind(Include = "work_Id,company,work_position,start_date,end_date,work_duties, freelancer_Id")] work_history work_history, int? id)
         {
             if (ModelState.IsValid)
             {
+                work_history.freelancer_id = id;
                 db.work_history.Add(work_history);
                 db.SaveChanges();
                 return RedirectToAction("Index");

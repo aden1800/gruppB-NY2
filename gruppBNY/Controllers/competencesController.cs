@@ -139,9 +139,10 @@ namespace gruppBNY.Controllers
         // POST: competences/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int id, int id2)
         {
-            competence competence = db.competence.Find(id);
+            competence competence = db.competence.Find(id2);
+            
             db.competence.Remove(competence);
             db.SaveChanges();
             return RedirectToAction("Index");

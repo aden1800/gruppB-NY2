@@ -1,0 +1,39 @@
+﻿@model IEnumerable<gruppBNY.Models.languages>
+
+@{
+    ViewBag.Title = "AddLanguage";
+}
+
+<h2>AddLanguage</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.languages1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Freelancer.Firstname)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.languages1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Freelancer.Firstname)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.languages_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.languages_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.languages_Id })
+        </td>
+    </tr>
+}
+
+</table>

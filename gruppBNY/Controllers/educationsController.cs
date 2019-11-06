@@ -46,10 +46,11 @@ namespace gruppBNY.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "education_Id,school_name,education_date,subject,education_degree,freelancer_Id")] education education)
+        public ActionResult Create([Bind(Include = "education_Id,school_name,education_date,subject,education_degree,freelancer_Id")] education education, int? id)
         {
             if (ModelState.IsValid)
             {
+                education.freelancer_id = id;
                 db.education.Add(education);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -123,5 +124,8 @@ namespace gruppBNY.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+    
     }
 }

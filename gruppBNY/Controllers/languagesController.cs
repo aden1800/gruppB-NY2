@@ -46,10 +46,11 @@ namespace gruppBNY.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "languages_Id,languages1")] languages languages)
+        public ActionResult Create([Bind(Include = "languages_Id,languages1,freelancer_Id")] languages languages, int? id)
         {
             if (ModelState.IsValid)
             {
+                languages.freelancer_id = id;
                 db.languages.Add(languages);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -102,6 +103,15 @@ namespace gruppBNY.Controllers
                 return HttpNotFound();
             }
             return View(languages);
+        }
+
+        public ActionResult AddLanguage(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            return View(db.languages.ToList());
         }
 
         // POST: languages/Delete/5
