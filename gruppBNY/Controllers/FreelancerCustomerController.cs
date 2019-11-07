@@ -56,6 +56,13 @@ namespace gruppBNY.Controllers
                     {
                         freelancers.Add(item);
                     }
+                    foreach (var item3 in item2.category)
+                    {
+                        if (item3.type_of_competence.Contains(value))
+                        {
+                            freelancers.Add(item);
+                        }
+                    }
                 }
             }
             return View(freelancers);

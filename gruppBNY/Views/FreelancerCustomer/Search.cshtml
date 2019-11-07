@@ -52,7 +52,7 @@
             Competence
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Profile_text)
+            Category
         </th>
         <th>
 
@@ -60,50 +60,54 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Firstname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lastname)
-        </td>
-        @*<td>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Firstname)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Lastname)
+    </td>
+    @*<td>
             @Html.DisplayFor(modelItem => item.Username)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Feelancer_Password)
         </td>*@
-        <td>
-            @Html.DisplayFor(modelItem => item.Address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Phonenumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Birthday)
-        </td>
-        @*<td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Address)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Phonenumber)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Email)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Birthday)
+    </td>
+    @*<td>
             @Html.DisplayFor(modelItem => item.BirthCity)
         </td>*@
-        <td>
-            @Html.DisplayFor(modelItem => item.Nationality)
-        </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nationality)
+    </td>
 
+    <td>
+        @Html.DisplayFor(modelItem => item.Drivers_license)
+    </td>
+    <td>
+        @foreach (var item2 in item.competence)
+        {
+            @Html.DisplayFor(modelItem => item2.competences)
         <td>
-            @Html.DisplayFor(modelItem => item.Drivers_license)
-        </td>
-        <td>
-            @foreach (var item2 in item.competence)
+            @foreach (var item3 in item2.category)
             {
-                @Html.DisplayFor(modelItem => item2.competences)
+                @Html.DisplayFor(modelItem => item3.type_of_competence)
             }
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Profile_text)
+        }
         </td>
+
         <td>
             @*@Html.ActionLink("Edit", "Edit", new { id=item.freelancer_Id }) |*@
             @Html.ActionLink("Details", "Details", new { id = item.freelancer_Id })
