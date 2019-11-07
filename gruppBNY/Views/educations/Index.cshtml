@@ -5,48 +5,17 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h1>Your languages has been deleted.</h1>
+<h3>Press the button bellow to go back to your page.</h3>
+<div>
+    <button onclick="goBack()">Go Back to your profile</button>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.school_name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.education_date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.subject)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.education_degree)
-        </th>
-        <th></th>
-    </tr>
+    <script>
+        function goBack() {
+            window.history.back();
+            window.history.back();
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.school_name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.education_date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.subject)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.education_degree)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.education_Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.education_Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.education_Id })
-        </td>
-    </tr>
-}
 
-</table>
+        }
+    </script>
+</div>
