@@ -40,11 +40,16 @@
             @Html.DisplayNameFor(model => model.BirthCity)
         </th>*@
         <th>
+
+            @Html.DisplayNameFor(model => model.Nationality)
+
+        </th>
+
+        <th>
             @Html.DisplayNameFor(model => model.Drivers_license)
-            
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Nationality)
+            Competence
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Profile_text)
@@ -86,15 +91,22 @@
         <td>
             @Html.DisplayFor(modelItem => item.Nationality)
         </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.Drivers_license)
+        </td>
+        <td>
+            @foreach (var item2 in item.competence)
+            {
+                @Html.DisplayFor(modelItem => item2.competences)
+            }
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Profile_text)
         </td>
         <td>
             @*@Html.ActionLink("Edit", "Edit", new { id=item.freelancer_Id }) |*@
-            @Html.ActionLink("Details", "Details", new { id=item.freelancer_Id }) 
+            @Html.ActionLink("Details", "Details", new { id = item.freelancer_Id })
             @*@Html.ActionLink("Delete", "Delete", new { id=item.freelancer_Id })*@
         </td>
     </tr>
