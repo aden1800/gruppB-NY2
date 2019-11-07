@@ -287,7 +287,7 @@
     <Content Include="Views\educations\Delete.cshtml" />
     <Content Include="Views\educations\Details.cshtml" />
     <Content Include="Views\educations\Edit.cshtml" />
-    <Content Include="Views\educations\Index.cshtml" />
+    <Content Include="Views\Freelancer\Index.cshtml" />
     <Content Include="Views\languages\Create.cshtml" />
     <Content Include="Views\languages\Delete.cshtml" />
     <Content Include="Views\languages\Details.cshtml" />
@@ -314,7 +314,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\FreelancerCompetenceDetails\" />
-    <Folder Include="Views\Freelancer\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

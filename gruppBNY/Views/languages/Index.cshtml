@@ -5,30 +5,17 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h1>Your languages has been deleted.</h1>
+<h3>Press the button bellow to go back to your page.</h3>
+<div>
+    <button onclick="goBack()">Go Back to your profile</button>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.languages1)
-        </th>
-        <th></th>
-    </tr>
+    <script>
+        function goBack() {
+            window.history.back();
+            window.history.back();
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.languages1)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.languages_Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.languages_Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.languages_Id })
-        </td>
-    </tr>
-}
 
-</table>
+        }
+    </script>
+</div>

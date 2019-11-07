@@ -113,7 +113,7 @@ namespace gruppBNY.Controllers
             education education = db.education.Find(id);
             db.education.Remove(education);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("index");
         }
 
         protected override void Dispose(bool disposing)

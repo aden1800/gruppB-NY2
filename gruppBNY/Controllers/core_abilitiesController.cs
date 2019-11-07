@@ -110,6 +110,7 @@ namespace gruppBNY.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            Freelancer freelancer = db.Freelancer.Find(id);
             core_abilities core_abilities = db.core_abilities.Find(id);
             db.core_abilities.Remove(core_abilities);
             db.SaveChanges();

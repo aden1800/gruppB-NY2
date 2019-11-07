@@ -5,30 +5,20 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ability)
-        </th>
-        <th></th>
-    </tr>
+<h1>Your Core Ability has been deleted.</h1>
+<h3>Press the button bellow to go back to your page.</h3>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ability)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.core_abilities_Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.core_abilities_Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.core_abilities_Id })
-        </td>
-    </tr>
-}
+    <div>
+        <button onclick="goBack()">Go Back to your profile</button>
 
-</table>
+        <script>
+        function goBack() {
+            window.history.back();
+            window.history.back();
+
+
+        }
+        </script>
+    </div>
+
